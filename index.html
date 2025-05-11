@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingdom Barber</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="shortcut icon" href="scr/imagenes/favicon.png">
+
+</head>
+
+<body class="Alkatra">
+    <header class="header">
+        <a href="index.html#home" class="logo max-w-xs transition duration-150 ease-in-out hover:scale-110">
+            <img src="scr/imagenes/Logo barber.png" alt="Logo barberia"></a>
+        <nav class="navbar">
+            <a href="index.html#home">Nosotros</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="index.html#citas" class="citas-btn">Citas</a>
+            <a href="index.html#contact">Contactos</a>
+            <a href="index.html#mapa">Sedes</a>
+            <a href="index.html#registro" class="registro-btn" data-modal-target="authentication-modal"
+                data-modal-toggle="authentication-modal">
+                <i class="fas fa-user-plus"></i> Ingreso</a>
+
+            <!-- Inicio boton modal para Ingresar -->
+            <div id="authentication-modal" aria-hidden="true"
+                class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
+                <div class="relative w-full max-w-md px-4 h-full md:h-auto">
+
+                    <!-- Inicio contenido moral para ingresar -->
+                    <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
+                        <div class="flex justify-end p-2">
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                                data-modal-toggle="authentication-modal">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
+                            <h3 class="text-xl font-medium text-gray-900 dark:text-white">Ingresa a la plataforma</h3>
+                            <div>
+                                <label for="email"
+                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
+                                    electronico</label>
+                                <input type="email" name="email" id="email"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    placeholder="nombre@kingdombarber.com" required="">
+                            </div>
+                            <div>
+                                <label for="password"
+                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Contraseña</label>
+                                <input type="password" name="password" id="password" placeholder="••••••••"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    required="">
+                            </div>
+                            <div class="flex justify-between">
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input id="remember" aria-describedby="remember" type="checkbox"
+                                            class="bg-gray-50 border border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
+                                            required="">
+                                    </div>
+                                    <div class="text-sm ml-3">
+                                        <label for="remember"
+                                            class="font-medium text-gray-900 dark:text-gray-300">Recuerdame</label>
+                                    </div>
+                                </div>
+                                <button type="button" class="text-sm text-blue-700 hover:underline dark:text-blue-500"
+                                    data-modal-toggle="forgot-password-modal">¿Olvidaste contraseña?</button>
+                            </div>
+                            <button type="submit"
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ingresar</button>
+                            <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                                ¿No estas registrado? <button type="button"
+                                    class="text-blue-700 hover:underline dark:text-blue-500"
+                                    data-modal-toggle="create-account-modal">Crear cuenta</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Fin contenido moral para ingresar -->
+
+                </div>
+            </div>
+            <!-- Fin boton modal para Ingresar -->
+
+            <!-- Inicio modal olvide contraseña -->
+            <div id="forgot-password-modal" aria-hidden="true"
+                class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
+                <div class="relative w-full max-w-md px-4 h-full md:h-auto">
+                    <!-- Inicio contenido modal olvide contraseña -->
+                    <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
+                        <div class="flex justify-end p-2">
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                                data-modal-toggle="forgot-password-modal">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
+                            <h3 class="text-xl font-medium text-gray-900 dark:text-white">Restablecer contraseña</h3>
+                            <div>
+                                <label for="email-reset"
+                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
+                                    electronico</label>
+                                <input type="email" name="email-reset" id="email-reset"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    placeholder="nombre@kingdombarber.com" required="">
+                            </div>
+                            <button type="submit"
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Enviar
+                                enlace de recuperación</button>
+                        </form>
+                    </div>
+                    <!-- Fin contenido modal olvide contraseña -->
+
+                </div>
+            </div>
+            <!-- Fin modal olvide contraseña -->
+
+            <!-- Inicio modal crear cuenta -->
+            <div id="create-account-modal" aria-hidden="true"
+                class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
+                <div class="relative w-full max-w-md px-4 h-full md:h-auto">
+                    <!-- Inicio contenido modal crear cuenta -->
+                    <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
+                        <div class="flex justify-end p-2">
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                                data-modal-toggle="create-account-modal">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
+                            <h3 class="text-xl font-medium text-gray-900 dark:text-white">Crear una cuenta</h3>
+                            <div>
+                                <label for="email-create"
+                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
+                                    electronico</label>
+                                <input type="email" name="email-create" id="email-create"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    placeholder="nombre@kingdombarber.com" required="">
+                            </div>
+                            <div>
+                                <label for="password-create"
+                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Contraseña</label>
+                                <input type="password" name="password-create" id="password-create"
+                                    placeholder="••••••••"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    required="">
+                            </div>
+                            <div>
+                                <label for="confirm-password"
+                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Confirmar
+                                    Contraseña</label>
+                                <input type="password" name="confirm-password" id="confirm-password"
+                                    placeholder="••••••••"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    required="">
+                            </div>
+                            <button type="submit"
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Crear
+                                cuenta</button>
+                        </form>
+                    </div>
+                    <!-- Fin contenido modal crear cuenta -->
+
+                </div>
+            </div>
+            <!-- Fin modal crear cuenta -->
+
+            <!-- Inicio busqueda y carrito -->
+        </nav>
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="Buscar aqui...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+        <!-- Inicio Logos redes sociales -->
+        <div class="redessociales">
+            <a href="https://github.com/JuanRivera24/PAGINABARBER">
+                <img src="scr/imagenes/logogit.png" alt="Github" width="50px">
+            </a>
+            <a href="https://www.instagram.com/kingdom_barber77/">
+                <img src="scr/imagenes/logoigg.png" alt="Instagram" width="50px">
+            </a>
+            <a href="javascript:void(0);" id="open-chat-logo">
+                <img src="scr/imagenes/logowpp.png" alt="Whatsapp" width="50px">
+            </a>
+        </div>
+        <!-- Fin Logos redes sociales -->
+
+        <!-- Chat WhatsApp -->
+        <div class="fixed bottom-0 right-0 mb-4 mr-4">
+            <div id="chat-container" class="hidden fixed bottom-16 right-4 w-96">
+                <div class="bg-white shadow-md rounded-lg max-w-lg w-full">
+                    <div class="p-4 border-b bg-green-500 text-white rounded-t-lg flex justify-between items-center">
+                        <p class="text-lg font-semibold">Chat Kingdom Barber</p>
+                        <button id="close-chat"
+                            class="text-gray-300 hover:text-gray-400 focus:outline-none focus:text-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="chatbox" class="p-4 h-80 overflow-y-auto">
+                        <!-- Aquí se mostrarán los mensajes -->
+                        <div class="mb-2 text-right">
+                            <p class="bg-green-500 text-white rounded-lg py-2 px-4 inline-block">¡Hola! ¿En qué te puedo
+                                ayudar hoy?</p>
+                        </div>
+                        <div class="mb-2">
+                            <p class="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block">¡Hola! ¿Tienes alguna
+                                consulta sobre nuestros servicios?</p>
+                        </div>
+                    </div>
+                    <div class="p-4 border-t flex">
+                        <input id="user-input" type="text" placeholder="Escribe un mensaje"
+                            class="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <button id="send-button"
+                            class="bg-green-500 text-white px-4 py-2 rounded-r-md hover:bg-green-600 transition duration-300">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Principio Nosotros -->
+    <section class="home" id="home">
+        <div class="content">
+            <h3></h3>
+            <p></p>
+        </div>
+    </section>
+    <!-- Fin Nosotros -->
+
+    <!-- Inicio Servicios -->
+    <section class="menu" id="menu">
+        <h1 class="heading">Servicios</h1>
+        <p>En nuestra barbería ofrecemos una amplia variedad de servicios de corte de cabello, diseñados para adaptarse
+            a tu estilo y personalidad.</p>
+        <div>
+            <img src="https://i.pinimg.com/control2/736x/d6/c7/7f/d6c77f64ee023a94422f132f269b7d32.jpg" alt="Corte1">
+            <img src="https://i.pinimg.com/736x/3b/62/7c/3b627c579eb14ff8108a656ad0b7498a.jpg" alt="Corte2">
+            <img src="https://i.pinimg.com/control2/736x/fe/c1/21/fec121b70ea9b6e7a6b33459a91da151.jpg" alt="Diseño">
+            <img src="https://i.pinimg.com/control2/736x/ac/1a/fc/ac1afcd603ed2fa236941cf3cb99fcdd.jpg" alt="Niños">
+            <img src="https://i.pinimg.com/736x/79/b1/82/79b1826eda1675b49e65f3e69f8e9e5c.jpg" alt="Cejas">
+        </div>
+        <a href="servicios.html"><button type='button'
+                class='items-center py-2.5 px-6 text-lg rounded-lg bg-indigo-700 text-white cursor-pointer font-semibold  shadow-xs transition-all duration-400 hover:bg-indigo-600 hover:scale-110'>Ver
+                mas servicios</button></a>
+    </section>
+    <!-- Fin servicios -->
+
+    <!-- Inicio sección de citas -->
+    <section id="citas" class="citas p-6">
+        <div class="flex flex-wrap items-start justify-between max-w-7xl mx-auto bg-gray-900 rounded-lg shadow-lg">
+            <!-- Calendario -->
+            <div class="w-full md:w-1/2 p-4">
+                <div class="text-center text-white mb-4">
+                    <h2 class="text-2xl font-bold">Selecciona una fecha</h2>
+                </div>
+                <div class="grid grid-cols-7 gap-2" id="calendario">
+                    <!-- Los días del mes se generarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <div class="w-full md:w-1/2 bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-lg font-bold text-gray-800 mb-4">Completa tus datos</h2>
+                <form id="citaForm">
+                    <label for="nombre" class="block mb-2 text-sm text-gray-600">Nombre:</label>
+                    <input type="text" id="nombre" class="w-full p-2 border rounded-lg mb-4" placeholder="Tu nombre"
+                        required>
+                    <label for="hora" class="block mb-2 text-sm text-gray-600">Hora:</label>
+                    <select id="hora" class="w-full p-2 border rounded-lg mb-4 bg-gray-50 text-gray-800">
+                        <!-- Las horas disponibles se generarán dinámicamente con JavaScript -->
+                    </select>
+
+                    <button type="button" onclick="agendarCita()"
+                        class="w-full py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+                        Agendar Cita
+                    </button>
+                </form>
+                <div id="mensaje" class="mt-4 text-center"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin seccion de citas -->
+
+    <!-- Inicio contactos -->
+    <section class="contact" id="contact">
+        <h1 class="heading">Contactos<span></span></h1>
+        <div class="box-container">
+            <div class="row">
+
+                <!-- Barbero1 -->
+                <div class="barber">
+                    <div class="image">
+                        <img src="https://i.pinimg.com/736x/ef/bf/47/efbf478fb5120cab84983bf14b12a062.jpg"
+                            alt="Barbero 1">
+                    </div>
+                    <div class="content">
+                        <h3>Juan Pérez</h3>
+                        <p><strong>Email:</strong> juan.perez@Kingdombarber.com</p>
+                        <p><strong>Teléfono:</strong> 3218767226</p>
+                        <p><strong>Instagram:</strong> @juanperez_barber</p>
+                        <!-- Redes Sociales en Vertical -->
+                        <div class="social-links">
+                            <a href="https://wa.me/1234567890" target="_blank" class="social-icon">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="https://www.instagram.com/juanperez_barber" target="_blank" class="social-icon">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barbero2 -->
+                <div class="barber">
+                    <div class="image">
+                        <img src="https://i.pinimg.com/736x/61/84/f8/6184f814c0e45527e449f9a5ba8ad6d4.jpg"
+                            alt="Barbero 2">
+                    </div>
+                    <div class="content">
+                        <h3>Stiven Garcia</h3>
+                        <p><strong>Email:</strong> stiven.garcia@Kingdombarber.com</p>
+                        <p><strong>Teléfono:</strong> 3128753993</p>
+                        <p><strong>Instagram:</strong> @stivengarcia_barber</p>
+                        <!-- Redes Sociales en Vertical -->
+                        <div class="social-links">
+                            <a href="https://wa.me/1234567891" target="_blank" class="social-icon">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="https://www.instagram.com/anagarcia_barber" target="_blank" class="social-icon">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barbero3 -->
+                <div class="barber">
+                    <div class="image">
+                        <img src="https://i.pinimg.com/control2/736x/29/7f/18/297f18718301167ae4f4a193f84f772c.jpg"
+                            alt="Barbero 3">
+                    </div>
+                    <div class="content">
+                        <h3>Carlos López</h3>
+                        <p><strong>Email:</strong> carlos.lopez@Kingdombarber.com</p>
+                        <p><strong>Teléfono:</strong> 3139875632</p>
+                        <p><strong>Instagram:</strong> @carloslopez_barber</p>
+                        <!-- Redes Sociales en Vertical -->
+                        <div class="social-links">
+                            <a href="https://wa.me/1234567892" target="_blank" class="social-icon">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="https://www.instagram.com/carloslopez_barber" target="_blank" class="social-icon">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barbero4 -->
+                <div class="barber">
+                    <div class="image">
+                        <img src="https://i.pinimg.com/control2/736x/a5/3a/ab/a53aab17831a0364da8841de99c7afd9.jpg"
+                            alt="Barbero 4">
+                    </div>
+                    <div class="content">
+                        <h3>Efrain Estrada</h3>
+                        <p><strong>Email:</strong> efrain.estrada@Kingdombarber.com</p>
+                        <p><strong>Teléfono:</strong> 3016529203</p>
+                        <p><strong>Instagram:</strong> @efrainestrada_barber</p>
+                        <!-- Redes Sociales en Vertical -->
+                        <div class="social-links">
+                            <a href="https://wa.me/1234567892" target="_blank" class="social-icon">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="https://www.instagram.com/carloslopez_barber" target="_blank" class="social-icon">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Fin contactos -->
+
+    <!-- Inicio Mapa -->
+    <section class="content mapa" id="mapa">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1UghUE7HuOiYwNQYHlobXSNH_d7Oc10Q&ehbc=2E312F&noprof=1"
+            width="100%" height="350"></iframe>
+    </section>
+    <!-- Fin Mapa -->
+
+    <!-- inicio footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="footer-details">
+                    <h3>Sede Bello</h3>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>Dirección: Calle 50 # 50 - 20</li>
+                        <li>Teléfono: +123 456 789</li>
+                        <li>Email: contacto@kbarber.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-info">
+                <div class="footer-details">
+                    <h3>Sede El Tesoro</h3>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>Dirección: Calle 50 # 50 - 20</li>
+                        <li>Teléfono: +123 456 789</li>
+                        <li>Email: contacto@kbarber.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-info">
+                <div class="footer-details">
+                    <h3>Horario</h3>
+                </div>
+                <div class="footer-contact">
+                    <ul>
+                        <li>Lunes a Sabado: 7am - 9:15pm</li>
+                        <li>​​Domingo: Cerrado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Kingdom Barber - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <!-- fin de footer -->
+
+    <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
+    <script src="scrip.js"></script>
+</body>
+
+</html>

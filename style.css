@@ -1,0 +1,642 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap');
+/* Fuente de letra desde Google Fonts */
+
+:root {
+    --main-color: #dead7f;
+    /* Color principal */
+    --black: #13131a;
+    /* Color negro */
+    --bg: #010103;
+    /* Color de fondo */
+    --border: 1rem solid rgba(255, 255, 255, 0.3);
+    /* Color y grosor del borde */
+}
+
+* {
+    font-family: "Alkatra", system-ui;
+}
+
+html {
+    font-size: 70%;
+    /* Tamañp fuente de letra */
+    overflow-x: hidden;
+    /* Oculta el desplazamiento horizontal */
+    scroll-padding-top: 9rem;
+    /* Margen superior al desplazarse */
+    scroll-behavior: smooth;
+    /* Desplazamiento suave */
+}
+
+html::-webkit-scrollbar {
+    width: .8rem;
+    /* Ancho del scrollbar */
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #fff;
+    /* Color blanco para el scrollbar */
+    border-radius: 5rem;
+    /* Bordes redondeados */
+}
+
+body {
+    background: var(--bg);
+    /* Aplica el color de fondo general */
+}
+
+.heading {
+    text-align: center;
+    /* Centra el título */
+    color: #fff;
+    /* Color de texto blanco */
+    text-transform: uppercase;
+    /* Texto en mayúsculas */
+    padding-bottom: 3.5rem;
+    /* Espaciado inferior */
+    font-size: 4rem;
+    /* Tamaño de fuente */
+}
+
+.heading span {
+    color: var(--main-color);
+    /* Color especial para destacar texto */
+}
+
+.btn {
+    margin-top: 1rem;
+    /* Margen superior */
+    display: inline-block;
+    padding: .9rem 3rem;
+    /* Relleno */
+    font-size: 1.7rem;
+    /* Tamaño de fuente */
+    color: #FFF;
+    /* Color blanco */
+    background: var(--main-color);
+    /* Color de fondo principal */
+    cursor: pointer;
+    /* Cambia cursor al pasar sobre el botón */
+}
+
+.header {
+    background: var(--bg);
+    /* Color de fondo */
+    display: flex;
+    /* Flexbox para alinear elementos */
+    align-items: center;
+    /* Alineación central vertical */
+    justify-content: space-between;
+    /* Espacio entre elementos */
+    padding: 1.5rem 7%;
+    /* Relleno */
+    border-bottom: var(--border);
+    /* Borde inferior */
+    position: fixed;
+    /* Fija el encabezado */
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Fija en la parte superior de la página */
+    z-index: 1000;
+    /* Prioridad sobre otros el  ementos */
+}
+
+.header .logo img {
+    height: 6rem;
+    /* Altura de la imagen del logo */
+}
+
+.header .navbar a {
+    margin: 0 1rem;
+    /* Espacio entre enlaces */
+    font-size: 1.6rem;
+    /* Tamaño de fuente */
+    color: #fff;
+    /* Color de texto */
+}
+
+.header .navbar a:hover {
+    color: var(--main-color);
+    /* Cambia de color al pasar sobre los enlaces */
+    transform: scale(1.1);
+}
+
+.header .icons div {
+    color: #fff;
+    /* Color de iconos */
+    cursor: pointer;
+    /* Cambia el cursor */
+    font-size: 2.5rem;
+    /* Tamaño de los iconos */
+    margin-left: 2rem;
+    /* Espaciado entre iconos */
+}
+
+.header .icons div:hover {
+    color: var(--main-color);
+    /* Cambia de color al pasar sobre los iconos */
+}
+
+#menu-btn {
+    display: none;
+    /* Oculta el menú inicialmente */
+}
+
+.header .search-form {
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    /* Posición de la barra de búsqueda */
+    background: #fff;
+    /* Fondo blanco */
+    width: 50rem;
+    /* Ancho */
+    height: 5rem;
+    /* Altura */
+    display: flex;
+    /* Flexbox para alinear */
+    align-items: center;
+    /* Alineación central */
+    transform: scaleY(0);
+    /* Oculta usando escala */
+    transform-origin: top;
+    /* Origen de la transformación */
+}
+
+.header .search-form.active {
+    transform: scaleY(1);
+    /* Muestra al activarse */
+}
+
+/* Formulario de búsqueda en el header */
+.header .search-form input {
+    height: 100%;
+    /* Ocupa todo el alto del contenedor */
+    width: 100%;
+    /* Ocupa todo el ancho del contenedor */
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem;
+    /* Espacio interno */
+    text-transform: none;
+}
+
+.header .search-form label {
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color: var(--black);
+}
+
+.header .search-form label:hover {
+    color: var(--main-color);
+    /* Cambia el color al pasar el cursor */
+}
+
+/* Sección de inicio */
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(https://imagizer.imageshack.com/img922/6310/ZMiU5m.jpg) no-repeat;
+    /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    padding: 100px;
+}
+
+.redessociales {
+    position: fixed;
+    z-index: 999;
+    bottom: 20px;
+    right: 20px;
+}
+
+.redessociales img {
+    padding: 8px;
+}
+
+.redessociales img:hover {
+    transform: scale(1.1);
+}
+
+/* Sección de servicios */
+.menu {
+    padding: 50px;
+    justify-items: center;
+}
+
+.menu p {
+    color: white;
+    font-size: 140%;
+    padding: 0px 0px 40px;
+}
+
+.menu button {
+    margin: 20px;
+}
+
+.menu div {
+    display: flex;
+    height: 430px;
+}
+
+.menu div img {
+    width: 10%;
+    flex-grow: 1;
+    object-fit: cover;
+    border-radius: 5px;
+    opacity: .7;
+    transition: 1s ease;
+
+}
+
+.menu div img:hover {
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+/* Sección de Citas */
+.citas {
+    padding: 3rem 2rem;
+    background: url(scr/imagenes/Fondo-gris.jpg) no-repeat center;
+    size-adjust: 100%;
+    text-align: center;
+}
+
+.citas-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.citas-container h2 {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.citas-container label {
+    display: block;
+    font-size: 1.6rem;
+    color: #333;
+    margin: 1rem 0 0.5rem;
+}
+
+.citas-container input,
+.citas-container select {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.citas-container button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.8rem;
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.citas-container button:hover {
+    background-color: #444;
+}
+
+/* Inicio contacto */
+.contact {
+    background: url(scr/imagenes/Fondo-gris.jpg) no-repeat center;
+    padding: 40px;
+}
+
+.contact .box-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.contact .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    padding: 30px;
+}
+
+.contact .barber {
+    text-align: center;
+    background-color: #1d0909;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 200px;
+}
+
+.contact .barber .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact .barber .content h3 {
+    font-size: 2rem;
+    color: #dead7f;
+    margin-bottom: 1rem;
+}
+
+.contact .barber .content p {
+    font-size: 1.6rem;
+    color: #fdecec;
+    margin: 0.5rem 0;
+}
+
+.contact .barber .content p strong {
+    color: var(--main-color);
+}
+
+.contact .barber .content .social-links {
+    display: flex;
+    flex-direction: column;
+    /* Organiza los iconos verticalmente */
+    gap: 1rem;
+    /* Espaciado entre los iconos */
+    margin-top: 1rem;
+}
+
+.contact .barber .content .social-links a {
+    font-size: 1.6rem;
+    color: #fdecec;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.contact .barber .content .social-links a:hover {
+    color: #dead7f;
+    /* Color al hacer hover */
+}
+
+.contact .barber .content .social-links i {
+    font-size: 2rem;
+    /* Tamaño de los iconos */
+}
+
+#mensaje {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    color: var(--main-color);
+}
+
+/* inicio footer */
+.footer {
+    background-color: #000000;
+    /* Fondo oscuro */
+    color: #fff;
+    /* Texto blanco */
+    padding: 3rem 1rem;
+}
+
+/* Contenedor para los bloques del pie de página */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+/* Estilo para la información de la barbería y contacto */
+.footer-info {
+    flex: 2;
+    min-width: 300px;
+    margin: 1rem;
+    text-align: center;
+}
+
+.footer-details h3 {
+    font-size: 2.5rem;
+    color: #c09d03;
+    /* Rojo barbería */
+    margin-bottom: 1rem;
+}
+
+.footer-details p {
+    font-size: 1.6rem;
+    color: #ccc;
+}
+
+.footer-contact h4 {
+    font-size: 2rem;
+    color: #b98801;
+    /* Rojo barbería */
+    margin-bottom: 1rem;
+}
+
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mapa {
+    display: flex;
+}
+
+.footer-contact li {
+    font-size: 1.6rem;
+    color: #ccc;
+    margin-bottom: 0.5rem;
+}
+
+
+/* Estilo para el pie de página inferior */
+.footer-bottom {
+    background-color: #1c1c1c;
+    /* Fondo más oscuro para el pie */
+    padding: 1.8rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 1.8rem;
+    color: #ccc;
+}
+
+/* Asegura que en pantallas pequeñas el pie de página se vea bien */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-info,
+    .footer-social {
+        text-align: center;
+        margin: 1rem 0;
+    }
+}
+
+/* Media Queries para pantallas medianas */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+        /* Reduce el tamaño base */
+    }
+
+    .header {
+        padding: 1.5rem 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    #menu-btn {
+        display: inline-block;
+        /* Muestra el botón de menú en dispositivos pequeños */
+    }
+
+
+    .header .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: #010103;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+        /* Tamaño completo de la pantalla */
+    }
+
+    .header .navbar.active {
+        right: 0;
+        /* Muestra el menú cuando está activo */
+    }
+
+    .header .navbar a {
+        display: block;
+        margin: 1.5rem;
+        padding: .5rem;
+        font-size: 2rem;
+    }
+
+    .header .search-form {
+        width: 90%;
+        right: 2rem;
+    }
+
+    .home {
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home .content h3 {
+        font-size: 4.5rem;
+    }
+
+    .home .content p {
+        font-size: 1.5rem;
+    }
+}
+
+/* Media Queries para pantallas extra pequeñas */
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+        /* Reduce aún más el tamaño base */
+    }
+}
+
+.bg-gradient::after {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.6), transparent 20%);
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transition: background 0.5s ease;
+}
+
+/* Calendario */
+.grid-cols-7 {
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.box {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.box:hover {
+    transform: scale(1.1);
+    background-color: #1e3a8a;
+    color: #fff;
+}
+
+.bg-gradient::after {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.4), transparent 20%);
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transition: background 0.5s ease;
+}
+
+.citas {
+    border-radius: 10px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .citas .flex {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Estilos para la lista de sugerencias */
+.search-suggestions {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+.search-suggestions .search-item {
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: var(--black);
+}
+
+.search-suggestions .search-item:hover {
+    background: var(--main-color);
+    color: white;
+}

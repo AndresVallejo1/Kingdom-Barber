@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap'); /* Fuente de letra desde Google Fonts */
+
+
+
+:root {
+    --main-color: #dead7f; /* Color principal */
+    --black: #13131a; /* Color negro */
+    --bg: #010103; /* Color de fondo */
+    --border: 1rem solid rgba(255, 255, 255, 0.3); /* Color y grosor del borde */
+}
+
+* {
+    font-family: "Alkatra", system-ui;
+}
+
+html {
+    font-size: 70%; /* Tamañp fuente de letra */
+    overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+    scroll-padding-top: 9rem; /* Margen superior al desplazarse */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+html::-webkit-scrollbar {
+    width: .8rem; /* Ancho del scrollbar */
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #fff; /* Color blanco para el scrollbar */
+    border-radius: 5rem; /* Bordes redondeados */
+}
+
+body {
+    background: var(--bg); /* Aplica el color de fondo general */
+}
+
+.heading {
+    text-align: center; /* Centra el título */
+    color: #fff; /* Color de texto blanco */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    padding-bottom: 3.5rem; /* Espaciado inferior */
+    font-size: 4rem; /* Tamaño de fuente */
+}
+
+.heading span {
+    color: var(--main-color); /* Color especial para destacar texto */
+}
+
+.btn {
+    margin-top: 1rem; /* Margen superior */
+    display: inline-block;
+    padding: .9rem 3rem; /* Relleno */
+    font-size: 1.7rem; /* Tamaño de fuente */
+    color: #FFF; /* Color blanco */
+    background: var(--main-color); /* Color de fondo principal */
+    cursor: pointer; /* Cambia cursor al pasar sobre el botón */
+}
+
+.header {
+    background: var(--bg); /* Color de fondo */
+    display: flex; /* Flexbox para alinear elementos */
+    align-items: center; /* Alineación central vertical */
+    justify-content: space-between; /* Espacio entre elementos */
+    padding: 1.5rem 7%; /* Relleno */
+    border-bottom: var(--border); /* Borde inferior */
+    position: fixed; /* Fija el encabezado */
+    top: 0; left: 0; right: 0; /* Fija en la parte superior de la página */
+    z-index: 1000; /* Prioridad sobre otros el  ementos */
+}
+
+.header .logo img {
+    height: 6rem; /* Altura de la imagen del logo */
+}
+.header .navbar a {
+    margin: 0 1rem; /* Espacio entre enlaces */
+    font-size: 1.6rem; /* Tamaño de fuente */
+    color: #fff; /* Color de texto */
+}
+.header .navbar a:hover {
+    color: var(--main-color); /* Cambia de color al pasar sobre los enlaces */
+    transform: scale(1.1);
+}
+
+.header .icons div {
+    color: #fff; /* Color de iconos */
+    cursor: pointer; /* Cambia el cursor */
+    font-size: 2.5rem; /* Tamaño de los iconos */
+    margin-left: 2rem; /* Espaciado entre iconos */
+}
+
+.header .icons div:hover {
+    color: var(--main-color); /* Cambia de color al pasar sobre los iconos */
+}
+
+
+#menu-btn {
+    display: none; /* Oculta el menú inicialmente */
+}
+
+.header .search-form {
+    position: absolute;
+    top: 115%; right: 7%; /* Posición de la barra de búsqueda */
+    background: #fff; /* Fondo blanco */
+    width: 50rem; /* Ancho */
+    height: 5rem; /* Altura */
+    display: flex; /* Flexbox para alinear */
+    align-items: center; /* Alineación central */
+    transform: scaleY(0); /* Oculta usando escala */
+    transform-origin: top; /* Origen de la transformación */
+}
+
+.header .search-form.active {
+    transform: scaleY(1); /* Muestra al activarse */
+}
+
+/* Formulario de búsqueda en el header */
+.header .search-form input {
+    height: 100%; /* Ocupa todo el alto del contenedor */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem; /* Espacio interno */
+    text-transform: none;
+}
+
+.header .search-form label {
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color: var(--black);
+}
+
+.header .search-form label:hover {
+    color: var(--main-color); /* Cambia el color al pasar el cursor */
+}
+
+/* Sección de inicio */
+.home {
+    min-height: 150vh;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center ;
+    padding: 130px 80px 0px;
+}
+
+.home h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #ffffff ;
+}
+
+.home p {
+    font-size: 18px;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 30px;
+    color:#ffffff;
+
+}
+
+.redessociales{
+    position: fixed;
+    z-index: 999;
+    bottom: 20px;
+    right: 20px;
+}
+
+.redessociales img{
+    padding: 8px;
+}
+
+.redessociales img:hover{
+    transform: scale(1.1);
+}
+
+
+/* inicio footer */
+.footer {
+    background-color: #000000; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 3rem 1rem;
+}
+
+/* Estilo para el pie de página inferior */
+.footer-bottom {
+    background-color: #1c1c1c; /* Fondo más oscuro para el pie */
+    padding: 1.8rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 1.8rem;
+    color: #ccc;
+}
+
+/* Asegura que en pantallas pequeñas el pie de página se vea bien */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-info, .footer-social {
+        text-align: center;
+        margin: 1rem 0;
+    }
+}
+
+/* Media Queries para pantallas medianas */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%; /* Reduce el tamaño base */
+    }
+
+    .header {
+        padding: 1.5rem 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    #menu-btn {
+        display: inline-block; /* Muestra el botón de menú en dispositivos pequeños */
+    }
+
+
+    .header .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: #010103;
+        width: 30rem;
+        height: calc(100vh - 9.5rem); /* Tamaño completo de la pantalla */
+    }
+
+    .header .navbar.active {
+        right: 0; /* Muestra el menú cuando está activo */
+    }
+
+    .header .navbar a {
+        display: block;
+        margin: 1.5rem;
+        padding: .5rem;
+        font-size: 2rem;
+    }
+
+    .header .search-form {
+        width: 90%;
+        right: 2rem;
+    }
+
+    .home {
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home .content h3 {
+        font-size: 4.5rem;
+    }
+
+    .home .content p {
+        font-size: 1.5rem;
+    }
+}
+
+/* Media Queries para pantallas extra pequeñas */
+@media (max-width: 450px) {
+    html {
+        font-size: 50%; /* Reduce aún más el tamaño base */
+    }
+}
+
+#imageModal {
+    display: none; /* Esconde el modal por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+}
+
+#imageModal .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    margin: auto;
+}
+
+#closeModal {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

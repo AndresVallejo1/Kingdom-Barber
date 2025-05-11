@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingdom Barber</title>
+    <link rel="stylesheet" href="scr/css/servicios.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="shortcut icon" href="scr/imagenes/favicon.png">
+
+</head>
+
+<body class="Alkatra">
+    <header class="header">
+        <a href="index.html#home" class="logo max-w-xs transition duration-150 ease-in-out hover:scale-110">
+            <img src="scr/imagenes/Logo barber.png" alt="Logo barberia"></a>
+        <nav class="navbar">
+            <a href="index.html#home">Nosotros</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="index.html#citas" class="citas-btn">Citas</a>
+            <a href="index.html#contact">Contactos</a>
+            <a href="index.html#mapa">Sedes</a>
+            <a href="servicios.html#registro" class="registro-btn" data-modal-target="authentication-modal"
+                data-modal-toggle="authentication-modal">
+                <i class="fas fa-user-plus"></i> Ingreso</a>
+
+            <!-- Inicio boton modal para Ingresar -->
+            <div id="authentication-modal" aria-hidden="true"
+                class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
+                <div class="relative w-full max-w-md px-4 h-full md:h-auto">
+
+                    <!-- Inicio contenido moral para ingresar -->
+                    <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
+                        <div class="flex justify-end p-2">
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                                data-modal-toggle="authentication-modal">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
+                            <h3 class="text-xl font-medium text-gray-900 dark:text-white">Ingresa a la plataforma</h3>
+                            <div>
+                                <label for="email"
+                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
+                                    electronico</label>
+                                <input type="email" name="email" id="email"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    placeholder="nombre@kingdombarber.com" required="">
+                            </div>
+                            <div>
+                                <label for="password"
+                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Contraseña</label>
+                                <input type="password" name="password" id="password" placeholder="••••••••"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    required="">
+                            </div>
+                            <div class="flex justify-between">
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input id="remember" aria-describedby="remember" type="checkbox"
+                                            class="bg-gray-50 border border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
+                                            required="">
+                                    </div>
+                                    <div class="text-sm ml-3">
+                                        <label for="remember"
+                                            class="font-medium text-gray-900 dark:text-gray-300">Recuerdame</label>
+                                    </div>
+                                </div>
+                                <button type="button" class="text-sm text-blue-700 hover:underline dark:text-blue-500"
+                                    data-modal-toggle="forgot-password-modal">¿Olvidaste contraseña?</button>
+                            </div>
+                            <button type="submit"
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ingresar</button>
+                            <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                                ¿No estas registrado? <button type="button"
+                                    class="text-blue-700 hover:underline dark:text-blue-500"
+                                    data-modal-toggle="create-account-modal">Crear cuenta</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Fin contenido moral para ingresar -->
+
+                </div>
+            </div>
+            <!-- Fin boton modal para Ingresar -->
+
+            <!-- Inicio modal olvide contraseña -->
+            <div id="forgot-password-modal" aria-hidden="true"
+                class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
+                <div class="relative w-full max-w-md px-4 h-full md:h-auto">
+                    <!-- Inicio contenido modal olvide contraseña -->
+                    <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
+                        <div class="flex justify-end p-2">
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                                data-modal-toggle="forgot-password-modal">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
+                            <h3 class="text-xl font-medium text-gray-900 dark:text-white">Restablecer contraseña</h3>
+                            <div>
+                                <label for="email-reset"
+                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
+                                    electronico</label>
+                                <input type="email" name="email-reset" id="email-reset"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    placeholder="nombre@kingdombarber.com" required="">
+                            </div>
+                            <button type="submit"
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Enviar
+                                enlace de recuperación</button>
+                        </form>
+                    </div>
+                    <!-- Fin contenido modal olvide contraseña -->
+
+                </div>
+            </div>
+            <!-- Fin modal olvide contraseña -->
+
+            <!-- Inicio modal crear cuenta -->
+            <div id="create-account-modal" aria-hidden="true"
+                class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
+                <div class="relative w-full max-w-md px-4 h-full md:h-auto">
+                    <!-- Inicio contenido modal crear cuenta -->
+                    <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
+                        <div class="flex justify-end p-2">
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                                data-modal-toggle="create-account-modal">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
+                            <h3 class="text-xl font-medium text-gray-900 dark:text-white">Crear una cuenta</h3>
+                            <div>
+                                <label for="email-create"
+                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
+                                    electronico</label>
+                                <input type="email" name="email-create" id="email-create"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    placeholder="nombre@kingdombarber.com" required="">
+                            </div>
+                            <div>
+                                <label for="password-create"
+                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Contraseña</label>
+                                <input type="password" name="password-create" id="password-create"
+                                    placeholder="••••••••"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    required="">
+                            </div>
+                            <div>
+                                <label for="confirm-password"
+                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Confirmar
+                                    Contraseña</label>
+                                <input type="password" name="confirm-password" id="confirm-password"
+                                    placeholder="••••••••"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    required="">
+                            </div>
+                            <button type="submit"
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Crear
+                                cuenta</button>
+                        </form>
+                    </div>
+                    <!-- Fin contenido modal crear cuenta -->
+
+                </div>
+            </div>
+            <!-- Fin modal crear cuenta -->
+
+            <!-- Inicio busqueda y carrito -->
+        </nav>
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="Buscar aqui...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+        <!-- Inicio Logos redes sociales -->
+        <div class="redessociales">
+            <a href="https://github.com/JuanRivera24/PAGINABARBER">
+                <img src="scr/imagenes/logogit.png" alt="Github" width="50px">
+            </a>
+            <a href="https://www.instagram.com/kingdom_barber77/">
+                <img src="scr/imagenes/logoigg.png" alt="Instagram" width="50px">
+            </a>
+            <a href="javascript:void(0);" id="open-chat-logo">
+                <img src="scr/imagenes/logowpp.png" alt="Whatsapp" width="50px">
+            </a>
+        </div>
+        <!-- Fin Logos redes sociales -->
+
+        <!-- Chat WhatsApp -->
+        <div class="fixed bottom-0 right-0 mb-4 mr-4">
+            <div id="chat-container" class="hidden fixed bottom-16 right-4 w-96">
+                <div class="bg-white shadow-md rounded-lg max-w-lg w-full">
+                    <div class="p-4 border-b bg-green-500 text-white rounded-t-lg flex justify-between items-center">
+                        <p class="text-lg font-semibold">Chat Kingdom Barber</p>
+                        <button id="close-chat"
+                            class="text-gray-300 hover:text-gray-400 focus:outline-none focus:text-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="chatbox" class="p-4 h-80 overflow-y-auto">
+                        <!-- Aquí se mostrarán los mensajes -->
+                        <div class="mb-2 text-right">
+                            <p class="bg-green-500 text-white rounded-lg py-2 px-4 inline-block">¡Hola! ¿En qué te puedo
+                                ayudar hoy?</p>
+                        </div>
+                        <div class="mb-2">
+                            <p class="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block">¡Hola! ¿Tienes alguna
+                                consulta sobre nuestros servicios?</p>
+                        </div>
+                    </div>
+                    <div class="p-4 border-t flex">
+                        <input id="user-input" type="text" placeholder="Escribe un mensaje"
+                            class="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <button id="send-button"
+                            class="bg-green-500 text-white px-4 py-2 rounded-r-md hover:bg-green-600 transition duration-300">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Inicio Servicios -->
+    <section class="home" id="home">
+        <div class="bg-black dark:bg-gray-800 h-screen h-full py-6 sm:py-8 lg:py-12">
+            <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+                <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
+                    <div class="flex items-center gap-12 flex-col">
+                        <h2 class="text-5xl font-bold text-white lg:text-5xl dark:text-white">Diseño y Estilo</h2>
+                        <p class="hidden max-w-screen-xl text-white dark:text-gray-300 md:block">
+                            Descubre cómo realzar tu estilo personal con nuestros tratamientos especializados. Cada
+                            detalle está pensado para ofrecerte un look fresco y moderno, resaltando tu personalidad
+                            única.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+                    <!-- Imagen 1 -->
+                    <div class="group relative flex h-80 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-50 image"
+                        data-service="CORTE">
+                        <img src="https://imagizer.imageshack.com/img924/360/h45gXn.jpg" loading="lazy" alt="CORTE"
+                            class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                        <div
+                            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+                        </div>
+                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Corte</span>
+                    </div>
+
+                    <!-- Imagen 2 -->
+                    <div class="group relative flex h-80 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-50 image"
+                        data-service="BARBA">
+                        <img src="https://imagizer.imageshack.com/img923/9378/V3Igbf.jpg" loading="lazy" alt="BARBA"
+                            class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                        <div
+                            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+                        </div>
+                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Barba</span>
+                    </div>
+
+                    <!-- Imagen 3 -->
+                    <div class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80 image"
+                        data-service="CEJAS">
+                        <img src="https://imagizer.imageshack.com/img924/2705/hwhZkO.jpg" loading="lazy" alt="CEJAS"
+                            class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                        <div
+                            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+                        </div>
+                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Cejas</span>
+                    </div>
+
+                    <!-- Imagen 4 -->
+                    <div class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80 image"
+                        data-service="TINTE">
+                        <img src="https://imagizer.imageshack.com/img923/1430/9i1C66.jpg" loading="lazy" alt="Tinte"
+                            class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                        <div
+                            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+                        </div>
+                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Tinte</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inicio Servicios - Cuidado Facial -->
+    <section class="home" id="home">
+        <div class="bg-black dark:bg-gray-800 h-screen h-full py-6 sm:py-8 lg:py-12">
+            <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+                <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
+                    <div class="flex items-center gap-12 flex-col">
+                        <h2 class="text-5xl font-bold text-white lg:text-5xl dark:text-white">Cuidado Facial</h2>
+                        <p class="hidden max-w-screen-xl text-white dark:text-gray-300 md:block">
+                            Dale a tu piel el cuidado que se merece con nuestros exclusivos tratamientos faciales.
+                            Perfectos para revitalizar, hidratar y rejuvenecer, te ayudamos a lucir una piel saludable y
+                            radiante.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+                    <!-- Imagen 5 -->
+                    <div class="group relative flex h-80 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-50 image"
+                        data-service="LIMPIEZA">
+                        <img src="https://imagizer.imageshack.com/img923/9950/vU4aAg.jpg" loading="lazy" alt="LIMPIEZA"
+                            class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                        <div
+                            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+                        </div>
+                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Limpieza
+                            Facial</span>
+                    </div>
+
+                    <!-- Imagen 6 -->
+                    <div class="group relative flex h-80 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-50 image"
+                        data-service="EXFOLIACIÓN">
+                        <img src="https://imagizer.imageshack.com/img923/2244/EgeVnJ.jpg" loading="lazy"
+                            alt="EXFOLIACIÓN"
+                            class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                        <div
+                            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+                        </div>
+                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Exfoliación
+                            Facial</span>
+                    </div>
+
+                    <!-- Imagen 7 -->
+                    <div class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80 image"
+                        data-service="MASCARILLA">
+                        <img src="https://imagizer.imageshack.com/img923/702/jVQv95.jpg" loading="lazy" alt="MASCARILLA"
+                            class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                        <div
+                            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+                        </div>
+                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Mascarilla
+                            Facial</span>
+                    </div>
+
+                    <!-- Imagen 8 -->
+                    <div class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80 image"
+                        data-service="HIDRATACIÓN">
+                        <img src="https://imagizer.imageshack.com/img923/4079/GLmdNu.jpg" loading="lazy"
+                            alt="HIDRATACIÓN"
+                            class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+                        <div
+                            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
+                        </div>
+                        <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Hidratación
+                            Facial</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para mostrar detalles del servicio -->
+    <div id="service-modal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+        <div class="bg-white p-8 rounded-lg text-center max-w-lg w-full">
+            <div class="flex flex-col items-center">
+                <!-- Imagen pequeña en el modal -->
+                <img id="modal-image" src="" alt="Imagen del servicio"
+                    class="w-32 h-32 object-cover mb-4 rounded-lg shadow-md" />
+
+                <!-- Título del servicio -->
+                <h3 id="modal-title" class="text-xl font-bold text-gray-800 mb-2"></h3>
+
+                <!-- Descripción del servicio -->
+                <p id="modal-description" class="text-gray-600 mb-4"></p>
+
+                <!-- Precio del servicio -->
+                <p id="modal-price" class="text-lg font-semibold text-green-600 mb-6"></p>
+
+                <!-- Botón de añadir al carrito -->
+                <button id="add-to-cart" class="py-2 px-4 bg-blue-600 text-white rounded-lg">Añadir al carrito</button>
+            </div>
+
+            <!-- Botón para cerrar el modal -->
+            <button id="close-modal" class="mt-4 py-2 px-4 bg-red-600 text-white rounded-lg">Cerrar</button>
+        </div>
+    </div>
+    <!-- Fin Servicios -->
+
+
+
+    <!-- inicio footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2024 Kingdom Barber - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <!-- fin de footer -->
+
+
+
+
+
+    <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
+    <script src="scrip.js"></script>
+    <script src="servicios.js"></script>
+</body>
+
+</html>
