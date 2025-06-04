@@ -36,7 +36,7 @@ function agendarCita() {
     if (nombre && fecha && hora) {
         mensaje.innerHTML = `¡Cita agendada para ${nombre} el ${fecha} a las ${hora}!`;
         // mensaje.innerHTML ='!Cita agendada exitosamente';
-        mensaje.style.color = "green";
+        mensaje.style.color = "red";
         document.getElementById("citaForm").reset();
     } else {
         mensaje.innerHTML = "Por favor, completa todos los campos.";
@@ -59,7 +59,7 @@ function registrarUsuario() {
         // Si los campos están completos, muestra un mensaje de éxito
         mensajeRegistro.innerHTML = `¡Registro exitoso, ${nombreRegistro}!`;
         mensajeRegistro.innerHTML = `¡Registro exitoso, ${nombreRegistro}!`;
-        mensajeRegistro.style.color = "green"; // Cambia el color del mensaje a verde
+        mensajeRegistro.style.color = "red"; // Cambia el color del mensaje a rojo
         document.getElementById("registroForm").reset(); // Limpia el formulario después del registro
     } else {
         // Si falta algún campo, muestra un mensaje de error
@@ -122,7 +122,7 @@ userInput.addEventListener("keyup", function (event) {
 function addUserMessage(message) {
     const messageElement = document.createElement("div");
     messageElement.classList.add("mb-2", "text-right");
-    messageElement.innerHTML = `<p class="bg-green-500 text-white rounded-lg py-2 px-4 inline-block">${message}</p>`;
+    messageElement.innerHTML = `<p class="bg-red-500 text-white rounded-lg py-2 px-4 inline-block">${message}</p>`;
     chatbox.appendChild(messageElement);
     chatbox.scrollTop = chatbox.scrollHeight;
 }
@@ -150,21 +150,6 @@ document.addEventListener("DOMContentLoaded", function () {
     chatbox.innerHTML = "";
 });
 
-//citas
-// Selección de día en el calendario
-document.querySelectorAll('.box').forEach((day) => {
-    day.addEventListener('click', function () {
-        // Quita la selección previa
-        document.querySelectorAll('.box').forEach((d) => d.classList.remove('bg-blue-500'));
-        // Resalta el día seleccionado
-        this.classList.add('bg-blue-500');
-        // Muestra el día seleccionado
-        const selectedDay = this.getAttribute('data-day');
-        const mensaje = document.getElementById('mensaje');
-        mensaje.innerHTML = `Día seleccionado: ${selectedDay}`;
-        mensaje.style.color = "green";
-    });
-});
 
 // Función para agendar cita
 // Generar el calendario dinámico
@@ -207,12 +192,34 @@ function generarCalendario(mes, anio) {
 function asignarEventosDias() {
     document.querySelectorAll('.box').forEach((day) => {
         day.addEventListener('click', function () {
-            document.querySelectorAll('.box').forEach((d) => d.classList.remove('bg-blue-500'));
-            this.classList.add('bg-blue-500');
-            const selectedDay = this.getAttribute('data-day');
-            const mensaje = document.getElementById('mensaje');
-            mensaje.innerHTML = `Día seleccionado: ${selectedDay}`;
-            mensaje.style.color = "green";
+            // Selección de día en el calendario
+            document.querySelectorAll('.box').forEach((day) => {
+                day.addEventListener('click', function () {
+                    // Quitar selección previa
+                    document.querySelectorAll('.box').forEach((d) => d.classList.remove('bg-blue-500'));
+                    // Resaltar día actual
+                    this.classList.add('bg-blue-500');
+
+                    const selectedDay = parseInt(this.getAttribute('data-day'));
+
+                    // Obtener mes y año seleccionados
+                    const mes = parseInt(document.getElementById('mesSelector').value);
+                    const anio = parseInt(document.getElementById('anioSelector').value);
+
+                    const fecha = new Date(anio, mes, selectedDay);
+
+                    // Formatear el mensaje: Sábado 6 de enero
+                    const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+                    const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+
+                    const nombreDia = diasSemana[fecha.getDay()];
+                    const nombreMes = meses[mes];
+
+                    const mensaje = document.getElementById('mensaje');
+                    mensaje.innerHTML = `${nombreDia} ${selectedDay} de ${nombreMes}`;
+                    mensaje.style.color = "red";
+                });
+            });
         });
     });
 }
@@ -234,20 +241,86 @@ function agendarCita() {
     const hora = document.getElementById('hora').value;
     const mensaje = document.getElementById('mensaje');
 
+    // Obtener día seleccionado
+    const diaSeleccionado = document.querySelector('.box.bg-blue-500');
+    const mes = parseInt(document.getElementById('mesSelector').value);
+    const anio = parseInt(document.getElementById('anioSelector').value);
+
+    if (!diaSeleccionado) {
+        Swal.fire({
+            title: "Selecciona un día",
+            icon: "warning"
+        });
+        return;
+    }
+    const dia = parseInt(diaSeleccionado.getAttribute('data-day'));
+    const fecha = new Date(anio, mes, dia);
+
+    const diasSemana = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+    const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+
+    const diaNombre = diasSemana[fecha.getDay()];
+    const mesNombre = meses[fecha.getMonth()];
+    const fechaFormateada = `${diaNombre} ${dia} de ${mesNombre}`;
     if (nombre && hora) {
-        mensaje.innerHTML = `¡Cita agendada para ${nombre} a las ${hora}!`;
-        mensaje.style.color = "green";
+        Swal.fire({
+            title: "¡Cita agendada!",
+            html: `<strong>${nombre}</strong>, tu cita sera el proximo <strong>${fechaFormateada}</strong> a las <strong>${hora}</strong>.`,
+            icon: "success",
+            confirmButtonText: "Aceptar"
+        });
         document.getElementById("citaForm").reset();
+        document.querySelectorAll('.box').forEach((d) => d.classList.remove('bg-blue-500'));
     } else {
-        mensaje.innerHTML = "Por favor, completa todos los campos.";
-        mensaje.style.color = "red";
+        Swal.fire({
+            title: "Completa todos los campos",
+            icon: "error"
+        });
     }
 }
 
-// Inicializar calendario y horas al cargar la página
+function inicializarSelectores() {
+    const mesSelector = document.getElementById("mesSelector");
+    const anioSelector = document.getElementById("anioSelector");
+
+    const meses = [
+        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+    ];
+
+    meses.forEach((mes, index) => {
+        const option = document.createElement("option");
+        option.value = index;
+        option.text = mes;
+        mesSelector.appendChild(option);
+    });
+
+    const anioActual = new Date().getFullYear();
+    for (let i = anioActual; i <= anioActual + 1; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.text = i;
+        anioSelector.appendChild(option);
+    }
+
+    mesSelector.value = fechaActual.getMonth();
+    anioSelector.value = fechaActual.getFullYear();
+
+    mesSelector.addEventListener("change", () => {
+        generarCalendario(parseInt(mesSelector.value), parseInt(anioSelector.value));
+    });
+
+    anioSelector.addEventListener("change", () => {
+        generarCalendario(parseInt(mesSelector.value), parseInt(anioSelector.value));
+    });
+}
+
+// Inicializar todo al cargar
 const fechaActual = new Date();
+inicializarSelectores();
 generarCalendario(fechaActual.getMonth(), fechaActual.getFullYear());
 generarHoras();
+
 
 //fin
 

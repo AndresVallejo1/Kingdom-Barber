@@ -5,25 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kingdom Barber</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/scr/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="shortcut icon" href="scr/imagenes/favicon.png">
+    <link rel="shortcut icon" href="/scr/imagenes/favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
 <body class="Alkatra">
     <header class="header">
-        <a href="index.html#home" class="logo max-w-xs transition duration-150 ease-in-out hover:scale-110">
-            <img src="scr/imagenes/Logo barber.png" alt="Logo barberia"></a>
+        <a href="/scr/pages/index.html" class="logo max-w-xs transition duration-150 ease-in-out hover:scale-110">
+            <img src="/scr/imagenes/Logo barber.png" alt="Logo barberia"></a>
         <nav class="navbar">
-            <a href="index.html#home">Nosotros</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="index.html#citas" class="citas-btn">Citas</a>
-            <a href="index.html#contact">Contactos</a>
-            <a href="index.html#mapa">Sedes</a>
-            <a href="index.html#registro" class="registro-btn" data-modal-target="authentication-modal"
+            <a href="/scr/pages/index.html#home">Nosotros</a>
+            <a href="/scr/pages/servicios.html">Servicios</a>
+            <a href="/scr/pages/index.html#citas" class="citas-btn">Citas</a>
+            <a href="/scr/pages/index.html#contact">Contactos</a>
+            <a href="/scr/pages/index.html#mapa">Sedes</a>
+            <a href="/scr/pages/index.html#registro" class="registro-btn" data-modal-target="authentication-modal"
                 data-modal-toggle="authentication-modal">
                 <i class="fas fa-user-plus"></i> Ingreso</a>
 
@@ -202,13 +203,13 @@
         <!-- Inicio Logos redes sociales -->
         <div class="redessociales">
             <a href="https://github.com/JuanRivera24/PAGINABARBER">
-                <img src="scr/imagenes/logogit.png" alt="Github" width="50px">
+                <img src="/scr/imagenes/logogit.png" alt="Github" width="50px">
             </a>
             <a href="https://www.instagram.com/kingdom_barber77/">
-                <img src="scr/imagenes/logoigg.png" alt="Instagram" width="50px">
+                <img src="/scr/imagenes/logoigg.png" alt="Instagram" width="50px">
             </a>
             <a href="javascript:void(0);" id="open-chat-logo">
-                <img src="scr/imagenes/logowpp.png" alt="Whatsapp" width="50px">
+                <img src="/scr/imagenes/logowpp.png" alt="Whatsapp" width="50px">
             </a>
         </div>
         <!-- Fin Logos redes sociales -->
@@ -279,16 +280,26 @@
 
     <!-- Inicio sección de citas -->
     <section id="citas" class="citas p-6">
-        <div class="flex flex-wrap items-start justify-between max-w-7xl mx-auto bg-gray-900 rounded-lg shadow-lg">
+        <div
+            class="w-full flex flex-wrap items-center justify-between max-w-7xl mx-auto bg-gray-900 rounded-lg shadow-lg">
             <!-- Calendario -->
             <div class="w-full md:w-1/2 p-4">
                 <div class="text-center text-white mb-4">
                     <h2 class="text-2xl font-bold">Selecciona una fecha</h2>
                 </div>
+                <div class="flex justify-center items-center gap-4 mb-4 text-white">
+                    <select id="mesSelector" class="p-2 bg-gray-700 rounded-lg">
+                        <!-- Se llenará dinámicamente -->
+                    </select>
+                    <select id="anioSelector" class="p-2 bg-gray-700 rounded-lg">
+                        <!-- Se llenará dinámicamente -->
+                    </select>
+                </div>
                 <div class="grid grid-cols-7 gap-2" id="calendario">
                     <!-- Los días del mes se generarán dinámicamente con JavaScript -->
                 </div>
             </div>
+
 
             <!-- Formulario -->
             <div class="w-full md:w-1/2 bg-white p-6 rounded-lg shadow-md">
@@ -472,7 +483,7 @@
     <!-- fin de footer -->
 
     <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
-    <script src="scrip.js"></script>
+    <script src="/scr/js/scrip.js"></script>
 </body>
 
 </html>
