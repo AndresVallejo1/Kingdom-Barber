@@ -150,6 +150,40 @@ document.addEventListener("DOMContentLoaded", function () {
     chatbox.innerHTML = "";
 });
 
+//Inicio Servicios:
+
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const captionText = document.getElementById("caption");
+
+  const descriptions = {
+  "Cejas": "Nuestro servicio de perfilado de cejas está diseñado para realzar tu mirada y mantener una apariencia limpia y cuidada. Utilizamos técnicas precisas que respetan la forma natural de tu rostro, asegurando un acabado prolijo y armonioso.",
+  
+  "Barba": "Ofrecemos un corte y delineado de barba meticuloso, adaptado a tu estilo personal. Ya sea que busques un look elegante, moderno o tradicional, nuestro equipo se encarga de definir, emparejar y perfilar tu barba con precisión profesional.",
+  
+  "Corte": "Realizamos cortes de cabello clásicos y modernos, siempre considerando tus rasgos, preferencias y estilo de vida. Nuestro objetivo es que salgas con un look renovado, prolijo y completamente personalizado.",
+  
+  "Tintura": "Nuestro servicio de tintura ofrece opciones de coloración para cabello y barba, ideal para quienes desean renovar su imagen o cubrir canas. Utilizamos productos de alta calidad que cuidan tu cabello y ofrecen resultados duraderos y vibrantes.",
+  
+  "Limpieza": "La limpieza facial profunda está pensada para eliminar impurezas, puntos negros y exceso de grasa, dejando tu piel más limpia, fresca y revitalizada. Es el complemento ideal para cuidar tu rostro y prevenir imperfecciones."
+};
+
+  const images = document.querySelectorAll(".image-container img");
+
+  images.forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      captionText.textContent = descriptions[img.alt] || "Servicio";
+    });
+  });
+
+  document.querySelector(".close").onclick = function () {
+    modal.style.display = "none";
+  };
+
+//Fin Servicios
+
 
 // Función para agendar cita
 // Generar el calendario dinámico

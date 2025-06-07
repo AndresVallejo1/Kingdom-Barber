@@ -31,13 +31,13 @@
             <!-- Inicio boton modal para Ingresar -->
             <div id="authentication-modal" aria-hidden="true"
                 class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
-                <div class="relative w-full max-w-md px-4 h-full md:h-auto">
+                <div class="relative w-full max-w-xl px-4 h-full md:h-auto">
 
                     <!-- Inicio contenido moral para ingresar -->
                     <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
                         <div class="flex justify-end p-2">
                             <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-900 dark:hover:text-white"
                                 data-modal-toggle="authentication-modal">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -48,10 +48,10 @@
                             </button>
                         </div>
                         <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
-                            <h3 class="text-xl font-medium text-gray-900 dark:text-white">Ingresa a la plataforma</h3>
+                            <h3 class="text-2xl font-medium text-gray-900 dark:text-white">Ingresa a la plataforma</h3>
                             <div>
                                 <label for="email"
-                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
+                                    class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
                                     electronico</label>
                                 <input type="email" name="email" id="email"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
@@ -59,7 +59,7 @@
                             </div>
                             <div>
                                 <label for="password"
-                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Contraseña</label>
+                                    class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Contraseña</label>
                                 <input type="password" name="password" id="password" placeholder="••••••••"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                     required="">
@@ -68,20 +68,19 @@
                                 <div class="flex items-start">
                                     <div class="flex items-center h-5">
                                         <input id="remember" aria-describedby="remember" type="checkbox"
-                                            class="bg-gray-50 border border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                                            required="">
+                                            class="bg-gray-50 border border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
                                     </div>
                                     <div class="text-sm ml-3">
                                         <label for="remember"
                                             class="font-medium text-gray-900 dark:text-gray-300">Recuerdame</label>
                                     </div>
                                 </div>
-                                <button type="button" class="text-sm text-blue-700 hover:underline dark:text-blue-500"
+                                <button type="button" class="text-lg text-blue-700 hover:underline dark:text-blue-500"
                                     data-modal-toggle="forgot-password-modal">¿Olvidaste contraseña?</button>
                             </div>
                             <button type="submit"
-                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ingresar</button>
-                            <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ingresar</button>
+                            <div class="text-lg font-medium text-gray-500 dark:text-gray-300">
                                 ¿No estas registrado? <button type="button"
                                     class="text-blue-700 hover:underline dark:text-blue-500"
                                     data-modal-toggle="create-account-modal">Crear cuenta</button>
@@ -97,7 +96,7 @@
             <!-- Inicio modal olvide contraseña -->
             <div id="forgot-password-modal" aria-hidden="true"
                 class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
-                <div class="relative w-full max-w-md px-4 h-full md:h-auto">
+                <div class="relative w-full max-w-xl px-4 h-full md:h-auto">
                     <!-- Inicio contenido modal olvide contraseña -->
                     <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
                         <div class="flex justify-end p-2">
@@ -113,17 +112,17 @@
                             </button>
                         </div>
                         <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
-                            <h3 class="text-xl font-medium text-gray-900 dark:text-white">Restablecer contraseña</h3>
+                            <h3 class="text-2xl font-medium text-gray-900 dark:text-white">Restablecer contraseña</h3>
                             <div>
                                 <label for="email-reset"
-                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
+                                    class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
                                     electronico</label>
                                 <input type="email" name="email-reset" id="email-reset"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                     placeholder="nombre@kingdombarber.com" required="">
                             </div>
                             <button type="submit"
-                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Enviar
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Enviar
                                 enlace de recuperación</button>
                         </form>
                     </div>
@@ -136,7 +135,7 @@
             <!-- Inicio modal crear cuenta -->
             <div id="create-account-modal" aria-hidden="true"
                 class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
-                <div class="relative w-full max-w-md px-4 h-full md:h-auto">
+                <div class="relative w-full max-w-xl px-4 h-full md:h-auto">
                     <!-- Inicio contenido modal crear cuenta -->
                     <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
                         <div class="flex justify-end p-2">
@@ -152,10 +151,10 @@
                             </button>
                         </div>
                         <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
-                            <h3 class="text-xl font-medium text-gray-900 dark:text-white">Crear una cuenta</h3>
+                            <h3 class="text-2xl font-medium text-gray-900 dark:text-white">Crear una cuenta</h3>
                             <div>
                                 <label for="email-create"
-                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
+                                    class="text-lgfont-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
                                     electronico</label>
                                 <input type="email" name="email-create" id="email-create"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
@@ -163,7 +162,7 @@
                             </div>
                             <div>
                                 <label for="password-create"
-                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Contraseña</label>
+                                    class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Contraseña</label>
                                 <input type="password" name="password-create" id="password-create"
                                     placeholder="••••••••"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
@@ -171,7 +170,7 @@
                             </div>
                             <div>
                                 <label for="confirm-password"
-                                    class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Confirmar
+                                    class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Confirmar
                                     Contraseña</label>
                                 <input type="password" name="confirm-password" id="confirm-password"
                                     placeholder="••••••••"
@@ -179,7 +178,7 @@
                                     required="">
                             </div>
                             <button type="submit"
-                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Crear
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Crear
                                 cuenta</button>
                         </form>
                     </div>
@@ -265,17 +264,41 @@
         <h1 class="heading">Servicios</h1>
         <p>En nuestra barbería ofrecemos una amplia variedad de servicios de corte de cabello, diseñados para adaptarse
             a tu estilo y personalidad.</p>
-        <div>
-            <img src="https://i.pinimg.com/control2/736x/d6/c7/7f/d6c77f64ee023a94422f132f269b7d32.jpg" alt="Corte1">
-            <img src="https://i.pinimg.com/736x/3b/62/7c/3b627c579eb14ff8108a656ad0b7498a.jpg" alt="Corte2">
-            <img src="https://i.pinimg.com/control2/736x/fe/c1/21/fec121b70ea9b6e7a6b33459a91da151.jpg" alt="Diseño">
-            <img src="https://i.pinimg.com/control2/736x/ac/1a/fc/ac1afcd603ed2fa236941cf3cb99fcdd.jpg" alt="Niños">
-            <img src="https://i.pinimg.com/736x/79/b1/82/79b1826eda1675b49e65f3e69f8e9e5c.jpg" alt="Cejas">
+
+
+        <div class="image-gallery">
+            <div class="image-container">
+                <img src="https://i.pinimg.com/736x/2f/8c/5f/2f8c5fd6ce402d931c8f84f21995a779.jpg" alt="Cejas">
+                <span class="image-title">Perfilado de Cejas</span>
+            </div>
+            <div class="image-container">
+                <img src="https://i.pinimg.com/736x/18/47/73/184773a42d076fb4a4e610f626851c41.jpg" alt="Barba">
+                <span class="image-title">Corte y Perfilado de Barba</span>
+            </div>
+            <div class="image-container">
+                <img src="https://i.pinimg.com/control2/736x/d6/c7/7f/d6c77f64ee023a94422f132f269b7d32.jpg" alt="Corte">
+                <span class="image-title">Corte Clásico</span>
+            </div>
+            <div class="image-container">
+                <img src="https://i.pinimg.com/736x/69/53/3c/69533c5fb69fcb78bd12a8a685d966b4.jpg" alt="Tintura">
+                <span class="image-title">Tintura y Color</span>
+            </div>
+            <div class="image-container">
+                <img src="https://i.pinimg.com/736x/bd/c2/84/bdc284a3df18bb9b12100ef70135d6e8.jpg" alt="Limpieza">
+                <span class="image-title">Limpieza Facial</span>
+            </div>
         </div>
+
         <a href="servicios.html"><button type='button'
                 class='items-center py-2.5 px-6 text-lg rounded-lg bg-indigo-700 text-white cursor-pointer font-semibold  shadow-xs transition-all duration-400 hover:bg-indigo-600 hover:scale-110'>Ver
                 mas servicios</button></a>
     </section>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
     <!-- Fin servicios -->
 
     <!-- Inicio sección de citas -->
@@ -303,15 +326,19 @@
 
             <!-- Formulario -->
             <div class="w-full md:w-1/2 bg-white p-6 rounded-lg shadow-md">
-                <h2 class="text-lg font-bold text-gray-800 mb-4">Completa tus datos</h2>
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Completa tus datos</h2>
                 <form id="citaForm">
-                    <label for="nombre" class="block mb-2 text-sm text-gray-600">Nombre:</label>
+                    <label for="nombre" class="block mb-2 text-lg text-gray-600">Nombre:</label>
                     <input type="text" id="nombre" class="w-full p-2 border rounded-lg mb-4" placeholder="Tu nombre"
                         required>
-                    <label for="hora" class="block mb-2 text-sm text-gray-600">Hora:</label>
+                    <label for="hora" class="block mb-2 text-lg text-gray-600">Hora:</label>
                     <select id="hora" class="w-full p-2 border rounded-lg mb-4 bg-gray-50 text-gray-800">
                         <!-- Las horas disponibles se generarán dinámicamente con JavaScript -->
                     </select>
+
+                    <label for="observaciones" class="block mb-2 text-lg text-gray-600">Observaciones:</label>
+                    <textarea id="observaciones" class="w-full p-2 border rounded-lg mb-4"
+                        placeholder="Escribe aquí tus observaciones"></textarea>
 
                     <button type="button" onclick="agendarCita()"
                         class="w-full py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700">
