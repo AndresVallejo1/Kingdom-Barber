@@ -1,12 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap'); /* Fuente de letra desde Google Fonts */
-
-
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap');
+/* Fuente de letra desde Google Fonts */
 
 :root {
-    --main-color: #dead7f; /* Color principal */
-    --black: #13131a; /* Color negro */
-    --bg: #010103; /* Color de fondo */
-    --border: 1rem solid rgba(255, 255, 255, 0.3); /* Color y grosor del borde */
+    --main-color: #dead7f;
+    /* Color principal */
+    --black: #13131a;
+    /* Color negro */
+    --bg: #05050f;
+    /* Color de fondo */
+    --border: 1rem solid rgba(255, 255, 255, 0.3);
+    /* Color y grosor del borde */
 }
 
 * {
@@ -14,111 +17,167 @@
 }
 
 html {
-    font-size: 70%; /* Tamañp fuente de letra */
-    overflow-x: hidden; /* Oculta el desplazamiento horizontal */
-    scroll-padding-top: 9rem; /* Margen superior al desplazarse */
-    scroll-behavior: smooth; /* Desplazamiento suave */
+    font-size: 60%;
+    /* Tamañp fuente de letra */
+    overflow-x: hidden;
+    /* Oculta el desplazamiento horizontal */
+    scroll-padding-top: 9rem;
+    /* Margen superior al desplazarse */
+    scroll-behavior: smooth;
+    /* Desplazamiento suave */
 }
 
 html::-webkit-scrollbar {
-    width: .8rem; /* Ancho del scrollbar */
+    width: .8rem;
+    /* Ancho del scrollbar */
 }
 
 html::-webkit-scrollbar-thumb {
-    background: #fff; /* Color blanco para el scrollbar */
-    border-radius: 5rem; /* Bordes redondeados */
+    background: #fff;
+    /* Color blanco para el scrollbar */
+    border-radius: 5rem;
+    /* Bordes redondeados */
 }
 
 body {
-    background: var(--bg); /* Aplica el color de fondo general */
+    background: var(--bg);
+    /* Aplica el color de fondo general */
 }
 
 .heading {
-    text-align: center; /* Centra el título */
-    color: #fff; /* Color de texto blanco */
-    text-transform: uppercase; /* Texto en mayúsculas */
-    padding-bottom: 3.5rem; /* Espaciado inferior */
-    font-size: 4rem; /* Tamaño de fuente */
+    text-align: center;
+    /* Centra el título */
+    color: #fff;
+    /* Color de texto blanco */
+    text-transform: uppercase;
+    /* Texto en mayúsculas */
+    padding-bottom: 3.5rem;
+    /* Espaciado inferior */
+    font-size: 4rem;
+    /* Tamaño de fuente */
 }
 
 .heading span {
-    color: var(--main-color); /* Color especial para destacar texto */
+    color: var(--main-color);
+    /* Color especial para destacar texto */
 }
 
 .btn {
-    margin-top: 1rem; /* Margen superior */
+    margin-top: 1rem;
+    /* Margen superior */
     display: inline-block;
-    padding: .9rem 3rem; /* Relleno */
-    font-size: 1.7rem; /* Tamaño de fuente */
-    color: #FFF; /* Color blanco */
-    background: var(--main-color); /* Color de fondo principal */
-    cursor: pointer; /* Cambia cursor al pasar sobre el botón */
+    padding: .9rem 3rem;
+    /* Relleno */
+    font-size: 1.7rem;
+    /* Tamaño de fuente */
+    color: #FFF;
+    /* Color blanco */
+    background: var(--main-color);
+    /* Color de fondo principal */
+    cursor: pointer;
+    /* Cambia cursor al pasar sobre el botón */
 }
 
 .header {
-    background: var(--bg); /* Color de fondo */
-    display: flex; /* Flexbox para alinear elementos */
-    align-items: center; /* Alineación central vertical */
-    justify-content: space-between; /* Espacio entre elementos */
-    padding: 1.5rem 7%; /* Relleno */
-    border-bottom: var(--border); /* Borde inferior */
-    position: fixed; /* Fija el encabezado */
-    top: 0; left: 0; right: 0; /* Fija en la parte superior de la página */
-    z-index: 1000; /* Prioridad sobre otros el  ementos */
+    background: var(--bg);
+    /* Color de fondo */
+    display: flex;
+    /* Flexbox para alinear elementos */
+    align-items: center;
+    /* Alineación central vertical */
+    justify-content: space-between;
+    /* Espacio entre elementos */
+    padding: 1.5rem 7%;
+    /* Relleno */
+    border-bottom: var(--border);
+    /* Borde inferior */
+    position: fixed;
+    /* Fija el encabezado */
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Fija en la parte superior de la página */
+    z-index: 1000;
+    /* Prioridad sobre otros el  ementos */
 }
 
 .header .logo img {
-    height: 6rem; /* Altura de la imagen del logo */
+    height: 6rem;
+    /* Altura de la imagen del logo */
 }
+
 .header .navbar a {
-    margin: 0 1rem; /* Espacio entre enlaces */
-    font-size: 1.6rem; /* Tamaño de fuente */
-    color: #fff; /* Color de texto */
+    margin: 0 1rem;
+    /* Espacio entre enlaces */
+    font-size: 1.6rem;
+    /* Tamaño de fuente */
+    color: #fff;
+    /* Color de texto */
 }
+
 .header .navbar a:hover {
-    color: var(--main-color); /* Cambia de color al pasar sobre los enlaces */
+    color: var(--main-color);
+    /* Cambia de color al pasar sobre los enlaces */
     transform: scale(1.1);
 }
 
 .header .icons div {
-    color: #fff; /* Color de iconos */
-    cursor: pointer; /* Cambia el cursor */
-    font-size: 2.5rem; /* Tamaño de los iconos */
-    margin-left: 2rem; /* Espaciado entre iconos */
+    color: #fff;
+    /* Color de iconos */
+    cursor: pointer;
+    /* Cambia el cursor */
+    font-size: 2.5rem;
+    /* Tamaño de los iconos */
+    margin-left: 2rem;
+    /* Espaciado entre iconos */
 }
 
 .header .icons div:hover {
-    color: var(--main-color); /* Cambia de color al pasar sobre los iconos */
+    color: var(--main-color);
+    /* Cambia de color al pasar sobre los iconos */
 }
 
-
 #menu-btn {
-    display: none; /* Oculta el menú inicialmente */
+    display: none;
+    /* Oculta el menú inicialmente */
 }
 
 .header .search-form {
     position: absolute;
-    top: 115%; right: 7%; /* Posición de la barra de búsqueda */
-    background: #fff; /* Fondo blanco */
-    width: 50rem; /* Ancho */
-    height: 5rem; /* Altura */
-    display: flex; /* Flexbox para alinear */
-    align-items: center; /* Alineación central */
-    transform: scaleY(0); /* Oculta usando escala */
-    transform-origin: top; /* Origen de la transformación */
+    top: 115%;
+    right: 7%;
+    /* Posición de la barra de búsqueda */
+    background: #fff;
+    /* Fondo blanco */
+    width: 50rem;
+    /* Ancho */
+    height: 5rem;
+    /* Altura */
+    display: flex;
+    /* Flexbox para alinear */
+    align-items: center;
+    /* Alineación central */
+    transform: scaleY(0);
+    /* Oculta usando escala */
+    transform-origin: top;
+    /* Origen de la transformación */
 }
 
 .header .search-form.active {
-    transform: scaleY(1); /* Muestra al activarse */
+    transform: scaleY(1);
+    /* Muestra al activarse */
 }
 
 /* Formulario de búsqueda en el header */
 .header .search-form input {
-    height: 100%; /* Ocupa todo el alto del contenedor */
-    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 100%;
+    /* Ocupa todo el alto del contenedor */
+    width: 100%;
+    /* Ocupa todo el ancho del contenedor */
     font-size: 1.6rem;
     color: var(--black);
-    padding: 1rem; /* Espacio interno */
+    padding: 1rem;
+    /* Espacio interno */
     text-transform: none;
 }
 
@@ -130,7 +189,8 @@ body {
 }
 
 .header .search-form label:hover {
-    color: var(--main-color); /* Cambia el color al pasar el cursor */
+    color: var(--main-color);
+    /* Cambia el color al pasar el cursor */
 }
 
 /* Sección de inicio */
@@ -172,6 +232,353 @@ body {
 .redessociales img:hover{
     transform: scale(1.1);
 }
+
+
+/*SERVICIOS*/
+
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: #e95846;
+  text-decoration: none;
+}
+
+.pricing-table-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2.6em;
+  color: #FFF;
+  margin-top: 15px;
+  text-align: left;
+  margin-bottom: 25px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+}
+
+.pricing-table-title a {
+  font-size: 0.6em;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  height: 0;
+  width: 0;
+  clear: both;
+}
+/** ========================
+ * Contenedor
+ ============================*/
+.pricing-wrapper {
+  width: 960px;
+  margin: 40px auto 0;
+}
+
+.pricing-table {
+  margin: 0 10px;
+  text-align: center;
+  width: 300px;
+  float: left;
+  -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  box-shadow: 0 0 15px rgba(195, 194, 194, 0.159);
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.pricing-table:hover {
+  -webkit-transform: scale(1.06);
+  -ms-transform: scale(1.06);
+  -o-transform: scale(1.06);
+  transform: scale(1.06);
+}
+
+.pricing-title {
+  color: #FFF;
+  background: #d94c39;
+  padding: 20px 0;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+}
+
+.pricing-table.recommended .pricing-title {
+  background: #2d45cb;
+}
+
+.pricing-table.recommended .pricing-action {
+  background: #2d45cb;
+}
+
+.pricing-table .price {
+  background: #403e3d;
+  font-size: 3.4em;
+  font-weight: 700;
+  padding: 20px 0;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  color: #FFF;
+}
+
+.pricing-table .price sup {
+  font-size: 0.4em;
+  position: relative;
+  left: 5px;
+}
+
+.table-list {
+  background: #FFF;
+  color: #403d3a;
+}
+
+.table-list li {
+  font-size: 1.4em;
+  font-weight: 700;
+  padding: 12px 8px;
+}
+
+.table-list li:before {
+  content: "\f00c";
+  font-family: 'FontAwesome';
+  color: #3fab91;
+  display: inline-block;
+  position: relative;
+  right: 5px;
+  font-size: 16px;
+} 
+
+.table-list li span {
+  font-weight: 400;
+}
+
+.table-list li span.unlimited {
+  color: #FFF;
+  background: #d94c39;
+  font-size: 0.9em;
+  padding: 5px 7px;
+  display: inline-block;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  border-radius: 38px;
+}
+
+
+.table-list li:nth-child(2n) {
+  background: #F0F0F0;
+}
+
+.table-buy {
+  background: #FFF;
+  padding: 15px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.table-buy p {
+  float: left;
+  color: #37353a;
+  font-weight: 700;
+  font-size: 2.4em;
+}
+
+.table-buy p sup {
+  font-size: 0.5em;
+  position: relative;
+  left: 5px;
+}
+
+.table-buy .pricing-action {
+  float: right;
+  color: #FFF;
+  background: #d94c39;
+  padding: 10px 16px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  font-weight: 700;
+  font-size: 1.4em;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.table-buy .pricing-action:hover {
+  background: #cf4f3e;
+}
+
+.recommended .table-buy .pricing-action:hover {
+  background: #228799;  
+}
+
+/** ================
+ * Responsive
+ ===================*/
+ @media only screen and (min-width: 768px) and (max-width: 959px) {
+  .pricing-wrapper {
+    width: 768px;
+  }
+
+  .pricing-table {
+    width: 236px;
+  }
+  
+  .table-list li {
+    font-size: 1.3em;
+  }
+
+ }
+
+ @media only screen and (max-width: 767px) {
+  .pricing-wrapper {
+    width: 420px;
+  }
+
+  .pricing-table {
+    display: block;
+    float: none;
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
+ }
+
+@media only screen and (max-width: 479px) {
+  .pricing-wrapper {
+    width: 300px;
+  }
+} 
+
+/* fIN SERVICIOS*/
+
+
+/* Calendario */
+
+/* Sección de Citas */
+.citas {
+    padding: 3rem 2rem;
+    background: url(scr/imagenes/Fondo-gris.jpg) no-repeat center;
+    size-adjust: 100%;
+    text-align: center;
+}
+
+.citas-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.citas-container h2 {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.citas-container label {
+    display: block;
+    font-size: 1.6rem;
+    color: #333;
+    margin: 1rem 0 0.5rem;
+}
+
+.citas-container input,
+.citas-container select {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.citas-container button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.8rem;
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.citas-container button:hover {
+    background-color: #444;
+}
+
+
+
+.grid-cols-7 {
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.box {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.box:hover {
+    transform: scale(1.1);
+    background-color: #1e3a8a;
+    color: #fff;
+}
+
+.bg-gradient::after {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.4), transparent 20%);
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transition: background 0.5s ease;
+}
+
+.citas {
+    border-radius: 10px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .citas .flex {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Estilos para la lista de sugerencias */
+.search-suggestions {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+.search-suggestions .search-item {
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: var(--black);
+}
+
+.search-suggestions .search-item:hover {
+    background: var(--main-color);
+    color: white;
+}
+
+/*Fin Calendario*/
+
 
 
 /* inicio footer */
