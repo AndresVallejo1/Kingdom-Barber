@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingdom Barber</title>
+    <link rel="stylesheet" href="/scr/css/servicios.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="shortcut icon" href="/scr/imagenes/favicon.png">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body class="Alkatra">
+    <header class="header">
+        <a href="/scr/pages/index.html" class="logo max-w-xs transition duration-150 ease-in-out hover:scale-110">
+            <img src="/scr/imagenes/Logo barber.png" alt="Logo barberia"></a>
+        <nav class="navbar">
+            <a href="/scr/pages/index.html#home">Nosotros</a>
+            <a href="/scr/pages/servicios.html">Servicios</a>
+            <a href="/scr/pages/index.html#citas" class="citas-btn">Citas</a>
+            <a href="/scr/pages/index.html#contact">Contactos</a>
+            <a href="/scr/pages/index.html#mapa">Sedes</a>
+            <a href="/scr/pages/servicios.html#registro" class="registro-btn" data-modal-target="authentication-modal"
+                data-modal-toggle="authentication-modal">
+                <i class="fas fa-user-plus"></i> Ingreso</a>
+
+            <!-- Inicio boton modal para Ingresar -->
+            <div id="authentication-modal" aria-hidden="true"
+                class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
+                <div class="relative w-full max-w-xl px-4 h-full md:h-auto">
+
+                    <!-- Inicio contenido moral para ingresar -->
+                    <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
+                        <div class="flex justify-end p-2">
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-900 dark:hover:text-white"
+                                data-modal-toggle="authentication-modal">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
+                            <h3 class="text-2xl font-medium text-gray-900 dark:text-white">Ingresa a la plataforma</h3>
+                            <div>
+                                <label for="email"
+                                    class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
+                                    electronico</label>
+                                <input type="email" name="email" id="email"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    placeholder="nombre@kingdombarber.com" required="">
+                            </div>
+                            <div>
+                                <label for="password"
+                                    class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Contraseña</label>
+                                <input type="password" name="password" id="password" placeholder="••••••••"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    required="">
+                            </div>
+                            <div class="flex justify-between">
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input id="remember" aria-describedby="remember" type="checkbox"
+                                            class="bg-gray-50 border border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
+                                    </div>
+                                    <div class="text-sm ml-3">
+                                        <label for="remember"
+                                            class="font-medium text-gray-900 dark:text-gray-300">Recuerdame</label>
+                                    </div>
+                                </div>
+                                <button type="button" class="text-lg text-blue-700 hover:underline dark:text-blue-500"
+                                    data-modal-toggle="forgot-password-modal">¿Olvidaste contraseña?</button>
+                            </div>
+                            <button type="submit"
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ingresar</button>
+                            <div class="text-lg font-medium text-gray-500 dark:text-gray-300">
+                                ¿No estas registrado? <button type="button"
+                                    class="text-blue-700 hover:underline dark:text-blue-500"
+                                    data-modal-toggle="create-account-modal">Crear cuenta</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Fin contenido moral para ingresar -->
+
+                </div>
+            </div>
+            <!-- Fin boton modal para Ingresar -->
+
+            <!-- Inicio modal olvide contraseña -->
+            <div id="forgot-password-modal" aria-hidden="true"
+                class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
+                <div class="relative w-full max-w-xl px-4 h-full md:h-auto">
+                    <!-- Inicio contenido modal olvide contraseña -->
+                    <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
+                        <div class="flex justify-end p-2">
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                                data-modal-toggle="forgot-password-modal">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
+                            <h3 class="text-2xl font-medium text-gray-900 dark:text-white">Restablecer contraseña</h3>
+                            <div>
+                                <label for="email-reset"
+                                    class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
+                                    electronico</label>
+                                <input type="email" name="email-reset" id="email-reset"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    placeholder="nombre@kingdombarber.com" required="">
+                            </div>
+                            <button type="submit"
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Enviar
+                                enlace de recuperación</button>
+                        </form>
+                    </div>
+                    <!-- Fin contenido modal olvide contraseña -->
+
+                </div>
+            </div>
+            <!-- Fin modal olvide contraseña -->
+
+            <!-- Inicio modal crear cuenta -->
+            <div id="create-account-modal" aria-hidden="true"
+                class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
+                <div class="relative w-full max-w-xl px-4 h-full md:h-auto">
+                    <!-- Inicio contenido modal crear cuenta -->
+                    <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
+                        <div class="flex justify-end p-2">
+                            <button type="button"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                                data-modal-toggle="create-account-modal">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
+                            <h3 class="text-2xl font-medium text-gray-900 dark:text-white">Crear una cuenta</h3>
+                            <div>
+                                <label for="email-create"
+                                    class="text-lgfont-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
+                                    electronico</label>
+                                <input type="email" name="email-create" id="email-create"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    placeholder="nombre@kingdombarber.com" required="">
+                            </div>
+                            <div>
+                                <label for="password-create"
+                                    class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Contraseña</label>
+                                <input type="password" name="password-create" id="password-create"
+                                    placeholder="••••••••"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    required="">
+                            </div>
+                            <div>
+                                <label for="confirm-password"
+                                    class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Confirmar
+                                    Contraseña</label>
+                                <input type="password" name="confirm-password" id="confirm-password"
+                                    placeholder="••••••••"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    required="">
+                            </div>
+                            <button type="submit"
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Crear
+                                cuenta</button>
+                        </form>
+                    </div>
+                    <!-- Fin contenido modal crear cuenta -->
+
+                </div>
+            </div>
+            <!-- Fin modal crear cuenta -->
+
+            <!-- Inicio busqueda y carrito -->
+        </nav>
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="Buscar aqui...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+        <!-- Inicio Logos redes sociales -->
+        <div class="redessociales">
+            <a href="https://github.com/JuanRivera24/PAGINABARBER">
+                <img src="/scr/imagenes/logogit.png" alt="Github" width="50px">
+            </a>
+            <a href="https://www.instagram.com/kingdom_barber77/">
+                <img src="/scr/imagenes/logoigg.png" alt="Instagram" width="50px">
+            </a>
+            <a href="javascript:void(0);" id="open-chat-logo">
+                <img src="/scr/imagenes/logowpp.png" alt="Whatsapp" width="50px">
+            </a>
+        </div>
+        <!-- Fin Logos redes sociales -->
+
+        <!-- Chat WhatsApp -->
+        <div class="fixed bottom-0 right-0 mb-4 mr-4">
+            <div id="chat-container" class="hidden fixed bottom-16 right-4 w-96">
+                <div class="bg-white shadow-md rounded-lg max-w-lg w-full">
+                    <div class="p-4 border-b bg-green-500 text-white rounded-t-lg flex justify-between items-center">
+                        <p class="text-lg font-semibold">Chat Kingdom Barber</p>
+                        <button id="close-chat"
+                            class="text-gray-300 hover:text-gray-400 focus:outline-none focus:text-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="chatbox" class="p-4 h-80 overflow-y-auto">
+                        <!-- Aquí se mostrarán los mensajes -->
+                        <div class="mb-2 text-right">
+                            <p class="bg-green-500 text-white rounded-lg py-2 px-4 inline-block">¡Hola! ¿En qué te puedo
+                                ayudar hoy?</p>
+                        </div>
+                        <div class="mb-2">
+                            <p class="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block">¡Hola! ¿Tienes alguna
+                                consulta sobre nuestros servicios?</p>
+                        </div>
+                    </div>
+                    <div class="p-4 border-t flex">
+                        <input id="user-input" type="text" placeholder="Escribe un mensaje"
+                            class="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <button id="send-button"
+                            class="bg-green-500 text-white px-4 py-2 rounded-r-md hover:bg-green-600 transition duration-300">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Inicio Servicios -->
+    <section class="home" id="home">
+        <div class=" h-screen h-full py-6 sm:py-8 lg:py-12">
+            <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+
+                <div class="flex items-center gap-12 flex-col">
+                    <h2 class="text-5xl font-bold text-white lg:text-5xl dark:text-white">Perfilado de cejas</h2>
+                </div>
+
+
+                <!-- Contenedor -->
+                <div class="pricing-wrapper clearfix">
+
+                    <div class="pricing-table">
+                        <h3 class="pricing-title">Basico</h3>
+                        <div class="price">$5.000</div>
+                        <!-- Lista de Caracteristicas / Propiedades -->
+                        <ul class="table-list">
+                            <li>Perfilado de cejas <span>basico</span></li>
+                            <li>10 minutos <span>tiempo aproximado</span></li>
+                        </ul>
+                        <!-- Contratar / Comprar -->
+                        <div class="table-buy">
+                            <p>$5.000</p>
+                            <a href="/scr/pages/servicios.html#citas" class="pricing-action">Reservar</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-table recommended">
+                        <h3 class="pricing-title">Premium</h3>
+                        <div class="price">$15.000</div>
+                        <!-- Lista de Caracteristicas / Propiedades -->
+                        <ul class="table-list">
+                            <li>Perfilado de cejas <span>premium</span></li>
+                            <li>45 minutos <span>tiempo aproximado</span></li>
+                            <li>1 cerveza o bebida <span>nacional</span></li>
+                            <li>1 cancion <span>a eleccion</span></li>
+                        </ul>
+                        <!-- Contratar / Comprar -->
+                        <div class="table-buy">
+                            <p>$15.000</p>
+                            <a href="/scr/pages/servicios.html#citas" class="pricing-action">Reservar</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-table">
+                        <h3 class="pricing-title">Combo corte premium</h3>
+                        <div class="price">$30.000</div>
+                        <!-- Lista de Caracteristicas / Propiedades -->
+                        <ul class="table-list">
+                            <li>Corte con perfilado de cejas <span>premium</span></li>
+                            <li>1 hora y media <span>tiempo aproximado</span></li>
+                            <li>1 cerveza o bebida <span>nacional</span></li>
+                            <li>1 snack <span>segun disponibilidad en tienda</span></li>
+                            <li>Musica a eleccion <span class="unlimited">ilimitadas</span></li>
+                        </ul>
+                        <!-- Contratar / Comprar -->
+                        <div class="table-buy">
+                            <p>$30.000</p>
+                            <a href="/scr/pages/servicios.html#citas" class="pricing-action">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- PERFILADO DE BARBA -->
+                <div class="flex items-center gap-12 flex-col mt-16">
+                    <h2 class="text-5xl font-bold text-white lg:text-5xl dark:text-white">Perfilado de barba</h2>
+                </div>
+                <div class="pricing-wrapper clearfix">
+                    <div class="pricing-table">
+                        <h3 class="pricing-title">Básico</h3>
+                        <div class="price">$7.000</div>
+                        <ul class="table-list">
+                            <li>Perfilado tradicional <span>con máquina o tijera</span></li>
+                            <li>15 minutos <span>tiempo aproximado</span></li>
+                        </ul>
+                        <div class="table-buy">
+                            <p>$7.000</p>
+                            <a href="/scr/pages/servicios.html#citas" class="pricing-action">Reservar</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-table recommended">
+                        <h3 class="pricing-title">Premium</h3>
+                        <div class="price">$18.000</div>
+                        <ul class="table-list">
+                            <li>Perfilado detallado <span>con vapor y toalla caliente</span></li>
+                            <li>30 minutos <span>incluye hidratación</span></li>
+                            <li>1 bebida <span>nacional</span></li>
+                        </ul>
+                        <div class="table-buy">
+                            <p>$18.000</p>
+                            <a href="/scr/pages/servicios.html#citas" class="pricing-action">Reservar</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-table">
+                        <h3 class="pricing-title">Combo con corte</h3>
+                        <div class="price">$30.000</div>
+                        <ul class="table-list">
+                            <li>Corte + perfilado premium</li>
+                            <li>1 hora <span>tiempo estimado</span></li>
+                            <li>Bebida y música a elección</li>
+                        </ul>
+                        <div class="table-buy">
+                            <p>$30.000</p>
+                            <a href="/scr/pages/servicios.html#citas" class="pricing-action">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CORTE CLÁSICO -->
+                <div class="flex items-center gap-12 flex-col mt-16">
+                    <h2 class="text-5xl font-bold text-white lg:text-5xl dark:text-white">Corte Clasico</h2>
+                </div>
+                <div class="pricing-wrapper clearfix">
+                    <div class="pricing-table">
+                        <h3 class="pricing-title">Básico</h3>
+                        <div class="price">$12.000</div>
+                        <ul class="table-list">
+                            <li>Corte tradicional <span>máquina o tijera</span></li>
+                            <li>20 minutos <span>tiempo aproximado</span></li>
+                        </ul>
+                        <div class="table-buy">
+                            <p>$12.000</p>
+                            <a href="/scr/pages/servicios.html#citas" class="pricing-action">Reservar</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-table recommended">
+                        <h3 class="pricing-title">Premium</h3>
+                        <div class="price">$20.000</div>
+                        <ul class="table-list">
+                            <li>Corte + styling <span>incluye polvo o cera</span></li>
+                            <li>30 minutos <span>con limpieza al final</span></li>
+                        </ul>
+                        <div class="table-buy">
+                            <p>$20.000</p>
+                            <a href="/scr/pages/servicios.html#citas" class="pricing-action">Reservar</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-table">
+                        <h3 class="pricing-title">Combo premium</h3>
+                        <div class="price">$35.000</div>
+                        <ul class="table-list">
+                            <li>Corte + barba + ceja <span>premium</span></li>
+                            <li>1 hora <span>tiempo estimado</span></li>
+                            <li>Bebida y música a elección</li>
+                        </ul>
+                        <div class="table-buy">
+                            <p>$35.000</p>
+                            <a href="/scr/pages/servicios.html#citas" class="pricing-action">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TINTURA Y COLOR -->
+                <div class="flex items-center gap-12 flex-col mt-16">
+                    <h2 class="text-5xl font-bold text-white lg:text-5xl dark:text-white">Tintura y color</h2>
+                </div>
+                <div class="pricing-wrapper clearfix">
+                    <div class="pricing-table">
+                        <h3 class="pricing-title">Básico</h3>
+                        <div class="price">$25.000</div>
+                        <ul class="table-list">
+                            <li>Coloración completa <span>cabello o barba</span></li>
+                            <li>30 minutos <span>incluye lavado</span></li>
+                        </ul>
+                        <div class="table-buy">
+                            <p>$25.000</p>
+                            <a href="/scr/pages/servicios.html#citas" class="pricing-action">Reservar</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-table recommended">
+                        <h3 class="pricing-title">Premium</h3>
+                        <div class="price">$40.000</div>
+                        <ul class="table-list">
+                            <li>Mechas o diseño de color</li>
+                            <li>1 hora <span>aproximadamente</span></li>
+                            <li>Incluye retoque gratuito</li>
+                        </ul>
+                        <div class="table-buy">
+                            <p>$40.000</p>
+                            <a href="/scr/pages/servicios.html#citas" class="pricing-action">Reservar</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-table">
+                        <h3 class="pricing-title">Combo con corte</h3>
+                        <div class="price">$55.000</div>
+                        <ul class="table-list">
+                            <li>Tintura premium + corte de cabello</li>
+                            <li>1 hora y media <span>tiempo estimado</span></li>
+                            <li>Bebida incluida</li>
+                        </ul>
+                        <div class="table-buy">
+                            <p>$55.000</p>
+                            <a href="/scr/pages/servicios.html#citas" class="pricing-action">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LIMPIEZA FACIAL -->
+                <div class="flex items-center gap-12 flex-col mt-16">
+                    <h2 class="text-5xl font-bold text-white lg:text-5xl dark:text-white">Limpieza facial</h2>
+                </div>
+                <div class="pricing-wrapper clearfix">
+                    <div class="pricing-table">
+                        <h3 class="pricing-title">Básico</h3>
+                        <div class="price">$10.000</div>
+                        <ul class="table-list">
+                            <li>Limpieza superficial <span>exfoliante</span></li>
+                            <li>10 minutos <span>ideal post-corte</span></li>
+                        </ul>
+                        <div class="table-buy">
+                            <p>$10.000</p>
+                            <a href="/scr/pages/servicios.html#citas" class="pricing-action">Reservar</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-table recommended">
+                        <h3 class="pricing-title">Premium</h3>
+                        <div class="price">$22.000</div>
+                        <ul class="table-list">
+                            <li>Vapor, extracción y mascarilla</li>
+                            <li>30 minutos <span>incluye hidratación</span></li>
+                        </ul>
+                        <div class="table-buy">
+                            <p>$22.000</p>
+                            <a href="/scr/pages/servicios.html#citas" class="pricing-action">Reservar</a>
+                        </div>
+                    </div>
+
+                    <div class="pricing-table">
+                        <h3 class="pricing-title">Combo con corte</h3>
+                        <div class="price">$35.000</div>
+                        <ul class="table-list">
+                            <li>Limpieza facial premium + corte</li>
+                            <li>1 hora <span>relajación completa</span></li>
+                            <li>Bebida o snack incluido</li>
+                        </ul>
+                        <div class="table-buy">
+                            <p>$35.000</p>
+                            <a href="/scr/pages/servicios.html#citas" class="pricing-action">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+
+
+<!-- Inicio sección de citas -->
+    <section id="citas" class="citas p-6">
+        <div
+            class="w-full flex flex-wrap items-center justify-between max-w-7xl mx-auto bg-gray-900 rounded-lg shadow-lg">
+            <!-- Calendario -->
+            <div class="w-full md:w-1/2 p-4">
+                <div class="text-center text-white mb-4">
+                    <h3 class="text-3xl font-bold">Selecciona una fecha</h3>
+                </div>
+                <div class="flex justify-center items-center gap-4 mb-4 text-white">
+                    <select id="mesSelector" class="p-2 bg-gray-700 rounded-lg">
+                        <!-- Se llenará dinámicamente -->
+                    </select>
+                    <select id="anioSelector" class="p-2 bg-gray-700 rounded-lg">
+                        <!-- Se llenará dinámicamente -->
+                    </select>
+                </div>
+                <div class="grid grid-cols-7 gap-2" id="calendario">
+                    <!-- Los días del mes se generarán dinámicamente con JavaScript -->
+                </div>
+            </div>
+
+
+            <!-- Formulario -->
+            <div class="w-full md:w-1/2 bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Completa tus datos</h2>
+                <form id="citaForm">
+                    <label for="nombre" class="block mb-2 text-lg text-gray-600">Nombre:</label>
+                    <input type="text" id="nombre" class="w-full p-2 border rounded-lg mb-4" placeholder="Tu nombre"
+                        required>
+                    <label for="hora" class="block mb-2 text-lg text-gray-600">Hora:</label>
+                    <select id="hora" class="w-full p-2 border rounded-lg mb-4 bg-gray-50 text-gray-800">
+                        <!-- Las horas disponibles se generarán dinámicamente con JavaScript -->
+                    </select>
+
+                    <label for="observaciones" class="block mb-2 text-lg text-gray-600">Observaciones:</label>
+                    <textarea id="observaciones" class="w-full p-2 border rounded-lg mb-4"
+                        placeholder="Escribe aquí tus observaciones"></textarea>
+
+                    <button type="button" onclick="agendarCita()"
+                        class="w-full py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+                        Agendar Cita
+                    </button>
+                </form>
+                <div id="mensaje" class="mt-4 text-center"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin seccion de citas -->
+
+
+
+                <!-- inicio footer -->
+                <footer class="footer">
+                    <div class="footer-bottom">
+                        <p>&copy; 2024 Kingdom Barber - Todos los derechos reservados.</p>
+                    </div>
+                </footer>
+                <!-- fin de footer -->
+
+
+
+
+
+                <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
+                <script src="/scr/js/servicios.js"></script>
+</body>
+
+</html>

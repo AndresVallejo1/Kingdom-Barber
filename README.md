@@ -1,4 +1,4 @@
 # PROYECT
 
 
-https://github.com/yairo9/PROYECT.git
+https://github.com/AndresVallejo1/Kingdom-Barber.git
