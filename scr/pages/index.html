@@ -132,61 +132,100 @@
             </div>
             <!-- Fin modal olvide contraseña -->
 
-            <!-- Inicio modal crear cuenta -->
-            <div id="create-account-modal" aria-hidden="true"
-                class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
-                <div class="relative w-full max-w-xl px-4 h-full md:h-auto">
-                    <!-- Inicio contenido modal crear cuenta -->
-                    <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
-                        <div class="flex justify-end p-2">
-                            <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-                                data-modal-toggle="create-account-modal">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
-                            <h3 class="text-2xl font-medium text-gray-900 dark:text-white">Crear una cuenta</h3>
-                            <div>
-                                <label for="email-create"
-                                    class="text-lgfont-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
-                                    electronico</label>
-                                <input type="email" name="email-create" id="email-create"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                    placeholder="nombre@kingdombarber.com" required="">
-                            </div>
-                            <div>
-                                <label for="password-create"
-                                    class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Contraseña</label>
-                                <input type="password" name="password-create" id="password-create"
-                                    placeholder="••••••••"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                    required="">
-                            </div>
-                            <div>
-                                <label for="confirm-password"
-                                    class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Confirmar
-                                    Contraseña</label>
-                                <input type="password" name="confirm-password" id="confirm-password"
-                                    placeholder="••••••••"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                    required="">
-                            </div>
-                            <button type="submit"
-                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Crear
-                                cuenta</button>
-                        </form>
-                    </div>
-                    <!-- Fin contenido modal crear cuenta -->
-
-                </div>
+           <!-- Inicio modal crear cuenta -->
+<div id="create-account-modal" aria-hidden="true"
+    class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
+    <div class="relative w-full max-w-xl px-4 h-full md:h-auto">
+        <!-- Inicio contenido modal crear cuenta -->
+        <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
+            <div class="flex justify-end p-2">
+                <button type="button"
+                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                    data-modal-toggle="create-account-modal">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
             </div>
-            <!-- Fin modal crear cuenta -->
+            <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#" method="POST">
+                <h3 class="text-2xl font-medium text-gray-900 dark:text-white">Crear una cuenta</h3>
+
+                <!-- Campos nuevos necesarios para la base de datos -->
+                <div>
+                    <label for="first-name" class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Nombre</label>
+                    <input type="text" name="FirstName" id="first-name" placeholder="Tu nombre" required
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-white">
+                </div>
+
+                <div>
+                    <label for="last-name" class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Apellido</label>
+                    <input type="text" name="LastName" id="last-name" placeholder="Tu apellido" required
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-white">
+                </div>
+
+                <div>
+                    <label for="phone" class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Teléfono</label>
+                    <input type="text" name="Phone" id="phone" placeholder="Tu número de teléfono" required
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-white">
+                </div>
+
+                <div>
+                    <label for="birthdate" class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Fecha de nacimiento</label>
+                    <input type="date" name="BirthDate" id="birthdate"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-white">
+                </div>
+
+                <div>
+                    <label for="gender" class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Género</label>
+                    <select name="Gender" id="gender" required
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-white">
+                        <option value="">Selecciona una opción</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+                </div>
+
+                <!-- Ya existentes en tu formulario -->
+                <div>
+                    <label for="email-create"
+                        class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Correo electrónico</label>
+                    <input type="email" name="Email" id="email-create"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-white"
+                        placeholder="nombre@kingdombarber.com" required>
+                </div>
+
+                <div>
+                    <label for="password-create"
+                        class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Contraseña</label>
+                    <input type="password" name="Password" id="password-create"
+                        placeholder="••••••••"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-white"
+                        required>
+                </div>
+
+                <div>
+                    <label for="confirm-password"
+                        class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Confirmar Contraseña</label>
+                    <input type="password" name="ConfirmPassword" id="confirm-password"
+                        placeholder="••••••••"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-white"
+                        required>
+                </div>
+
+                <button type="submit"
+                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Crear cuenta
+                </button>
+            </form>
+        </div>
+        <!-- Fin contenido modal crear cuenta -->
+    </div>
+</div>
+<!-- Fin modal crear cuenta -->
+
 
             <!-- Inicio busqueda y carrito -->
         </nav>
