@@ -1,14 +1,12 @@
 // Primero definimos las variables
 let navbar = document.querySelector('.navbar');
 let searchForm = document.querySelector('.search-form');
-let cartItem = document.querySelector('.cart-items-container');
 
 // Evento de clic en el botón de menú
 document.querySelector('#menu-btn').onclick = () => {
     navbar.classList.toggle('active');
     // Eliminamos las clases "active" de los otros elementos si están definidos
     if (searchForm) searchForm.classList.remove('active');
-    if (cartItem) cartItem.classList.remove('active');
 };
 
 // Evento de clic en el botón de búsqueda
@@ -16,7 +14,6 @@ document.querySelector('#search-btn').onclick = () => {
     searchForm.classList.toggle('active');
     // Eliminamos las clases "active" de los otros elementos
     if (navbar) navbar.classList.remove('active');
-    if (cartItem) cartItem.classList.remove('active');
 };
 
 // Evento de scroll en la ventana
@@ -25,25 +22,7 @@ window.onscroll = () => {
     if (navbar) navbar.classList.remove('active');
     if (searchForm) searchForm.classList.remove('active');
 };
-//registro de citas
-// Función para agendar citas
-function agendarCita() {
-    const nombre = document.getElementById('nombre').value;
-    const fecha = document.getElementById('fecha').value;
-    const hora = document.getElementById('hora').value;
-    const mensaje = document.getElementById('mensaje');
 
-    if (nombre && fecha && hora) {
-        mensaje.innerHTML = `¡Cita agendada para ${nombre} el ${fecha} a las ${hora}!`;
-        // mensaje.innerHTML ='!Cita agendada exitosamente';
-        mensaje.style.color = "red";
-        document.getElementById("citaForm").reset();
-    } else {
-        mensaje.innerHTML = "Por favor, completa todos los campos.";
-        mensaje.style.color = "red";
-    }
-}
-//fin
 
 // INICIO REGISTRO
 //Función que maneja el registro de usuario
@@ -68,14 +47,9 @@ function registrarUsuario() {
     }
 }
 
-window.onscroll = () => {
-    navbar.classList.remove('active');
-    searchForm.classList.remove('active');
-    cartItem.classList.remove('active');
-}
-
 //FIN REGISTRO
 
+// INICIO CHAT
 // Elementos del chat
 const chatbox = document.getElementById("chatbox");
 const chatContainer = document.getElementById("chat-container");
@@ -150,8 +124,9 @@ document.addEventListener("DOMContentLoaded", function () {
     chatbox.innerHTML = "";
 });
 
-//Inicio Servicios:
+//FIN CHAT
 
+//Inicio Servicios:
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImage");
   const captionText = document.getElementById("caption");
@@ -181,7 +156,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".close").onclick = function () {
     modal.style.display = "none";
   };
-
 //Fin Servicios
 
 
