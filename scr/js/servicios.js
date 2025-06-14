@@ -1,14 +1,13 @@
-// Primero definimos las variables
+//INICIO BARRA NAVEGACION
+// // Primero definimos las variables
 let navbar = document.querySelector('.navbar');
 let searchForm = document.querySelector('.search-form');
-let cartItem = document.querySelector('.cart-items-container');
 
 // Evento de clic en el botón de menú
 document.querySelector('#menu-btn').onclick = () => {
     navbar.classList.toggle('active');
     // Eliminamos las clases "active" de los otros elementos si están definidos
     if (searchForm) searchForm.classList.remove('active');
-    if (cartItem) cartItem.classList.remove('active');
 };
 
 // Evento de clic en el botón de búsqueda
@@ -16,7 +15,6 @@ document.querySelector('#search-btn').onclick = () => {
     searchForm.classList.toggle('active');
     // Eliminamos las clases "active" de los otros elementos
     if (navbar) navbar.classList.remove('active');
-    if (cartItem) cartItem.classList.remove('active');
 };
 
 // Evento de scroll en la ventana
@@ -25,27 +23,10 @@ window.onscroll = () => {
     if (navbar) navbar.classList.remove('active');
     if (searchForm) searchForm.classList.remove('active');
 };
-//registro de citas
-// Función para agendar citas
-function agendarCita() {
-    const nombre = document.getElementById('nombre').value;
-    const fecha = document.getElementById('fecha').value;
-    const hora = document.getElementById('hora').value;
-    const mensaje = document.getElementById('mensaje');
+//FIN BARRA NAVEGACION
 
-    if (nombre && fecha && hora) {
-        mensaje.innerHTML = `¡Cita agendada para ${nombre} el ${fecha} a las ${hora}!`;
-        // mensaje.innerHTML ='!Cita agendada exitosamente';
-        mensaje.style.color = "red";
-        document.getElementById("citaForm").reset();
-    } else {
-        mensaje.innerHTML = "Por favor, completa todos los campos.";
-        mensaje.style.color = "red";
-    }
-}
-//fin
 
-// INICIO REGISTRO
+// INICIO LOGIN
 //Función que maneja el registro de usuario
 function registrarUsuario() {
     // Obtiene los valores de los campos de entrada del formulario
@@ -67,15 +48,9 @@ function registrarUsuario() {
         mensajeRegistro.style.color = "red"; // Cambia el color del mensaje a rojo
     }
 }
+//FIN LOGIN
 
-window.onscroll = () => {
-    navbar.classList.remove('active');
-    searchForm.classList.remove('active');
-    cartItem.classList.remove('active');
-}
-
-//FIN REGISTRO
-
+// INICIO CHAT WHATSAPP
 // Elementos del chat
 const chatbox = document.getElementById("chatbox");
 const chatContainer = document.getElementById("chat-container");
@@ -149,10 +124,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Aseguramos que el chat comienza vacío y sin mensajes predeterminados
     chatbox.innerHTML = "";
 });
+//FIN CHAT WHATSAPP
 
 
-
-
+//INICIO CITAS
 // Función para agendar cita
 // Generar el calendario dinámico
 function generarCalendario(mes, anio) {
@@ -322,17 +297,10 @@ const fechaActual = new Date();
 inicializarSelectores();
 generarCalendario(fechaActual.getMonth(), fechaActual.getFullYear());
 generarHoras();
+//FIN CITAS
 
 
-//fin
-
-
-
-
-
-
-//barra busqueda
-// Barra de búsqueda
+// INICIO BARRA DE BUSQUEDA
 // Variables necesarias
 const searchInput = document.getElementById('search-box'); // Barra de búsqueda
 const searchResults = document.createElement('ul'); // Lista de resultados sugeridos
@@ -435,3 +403,4 @@ searchInput.addEventListener('keydown', function (event) {
         }
     }
 });
+// FIN BARRA DE BUSQUEDA

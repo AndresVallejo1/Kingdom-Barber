@@ -1,4 +1,5 @@
-// Primero definimos las variables
+//INICIO BARRA NAVEGACION
+// // Primero definimos las variables
 let navbar = document.querySelector('.navbar');
 let searchForm = document.querySelector('.search-form');
 
@@ -22,9 +23,10 @@ window.onscroll = () => {
     if (navbar) navbar.classList.remove('active');
     if (searchForm) searchForm.classList.remove('active');
 };
+//FIN BARRA NAVEGACION
 
 
-// INICIO REGISTRO
+// INICIO LOGIN
 //Función que maneja el registro de usuario
 function registrarUsuario() {
     // Obtiene los valores de los campos de entrada del formulario
@@ -46,10 +48,9 @@ function registrarUsuario() {
         mensajeRegistro.style.color = "red"; // Cambia el color del mensaje a rojo
     }
 }
+//FIN LOGIN
 
-//FIN REGISTRO
-
-// INICIO CHAT
+// INICIO CHAT WHATSAPP
 // Elementos del chat
 const chatbox = document.getElementById("chatbox");
 const chatContainer = document.getElementById("chat-container");
@@ -123,42 +124,43 @@ document.addEventListener("DOMContentLoaded", function () {
     // Aseguramos que el chat comienza vacío y sin mensajes predeterminados
     chatbox.innerHTML = "";
 });
+//FIN CHAT WHATSAPP
 
-//FIN CHAT
 
-//Inicio Servicios:
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImage");
-  const captionText = document.getElementById("caption");
+//INICIO SERVICIOS
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const captionText = document.getElementById("caption");
 
-  const descriptions = {
-  "Cejas": "Nuestro servicio de perfilado de cejas está diseñado para realzar tu mirada y mantener una apariencia limpia y cuidada. Utilizamos técnicas precisas que respetan la forma natural de tu rostro, asegurando un acabado prolijo y armonioso.",
-  
-  "Barba": "Ofrecemos un corte y delineado de barba meticuloso, adaptado a tu estilo personal. Ya sea que busques un look elegante, moderno o tradicional, nuestro equipo se encarga de definir, emparejar y perfilar tu barba con precisión profesional.",
-  
-  "Corte": "Realizamos cortes de cabello clásicos y modernos, siempre considerando tus rasgos, preferencias y estilo de vida. Nuestro objetivo es que salgas con un look renovado, prolijo y completamente personalizado.",
-  
-  "Tintura": "Nuestro servicio de tintura ofrece opciones de coloración para cabello y barba, ideal para quienes desean renovar su imagen o cubrir canas. Utilizamos productos de alta calidad que cuidan tu cabello y ofrecen resultados duraderos y vibrantes.",
-  
-  "Limpieza": "La limpieza facial profunda está pensada para eliminar impurezas, puntos negros y exceso de grasa, dejando tu piel más limpia, fresca y revitalizada. Es el complemento ideal para cuidar tu rostro y prevenir imperfecciones."
+const descriptions = {
+    "Cejas": "Nuestro servicio de perfilado de cejas está diseñado para realzar tu mirada y mantener una apariencia limpia y cuidada. Utilizamos técnicas precisas que respetan la forma natural de tu rostro, asegurando un acabado prolijo y armonioso.",
+
+    "Barba": "Ofrecemos un corte y delineado de barba meticuloso, adaptado a tu estilo personal. Ya sea que busques un look elegante, moderno o tradicional, nuestro equipo se encarga de definir, emparejar y perfilar tu barba con precisión profesional.",
+
+    "Corte": "Realizamos cortes de cabello clásicos y modernos, siempre considerando tus rasgos, preferencias y estilo de vida. Nuestro objetivo es que salgas con un look renovado, prolijo y completamente personalizado.",
+
+    "Tintura": "Nuestro servicio de tintura ofrece opciones de coloración para cabello y barba, ideal para quienes desean renovar su imagen o cubrir canas. Utilizamos productos de alta calidad que cuidan tu cabello y ofrecen resultados duraderos y vibrantes.",
+
+    "Limpieza": "La limpieza facial profunda está pensada para eliminar impurezas, puntos negros y exceso de grasa, dejando tu piel más limpia, fresca y revitalizada. Es el complemento ideal para cuidar tu rostro y prevenir imperfecciones."
 };
 
-  const images = document.querySelectorAll(".image-container img");
+const images = document.querySelectorAll(".image-container img");
 
-  images.forEach(img => {
+images.forEach(img => {
     img.addEventListener("click", () => {
-      modal.style.display = "block";
-      modalImg.src = img.src;
-      captionText.textContent = descriptions[img.alt] || "Servicio";
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.textContent = descriptions[img.alt] || "Servicio";
     });
-  });
+});
 
-  document.querySelector(".close").onclick = function () {
+document.querySelector(".close").onclick = function () {
     modal.style.display = "none";
-  };
-//Fin Servicios
+};
+//FIN SERVICIOS
 
 
+//INICIO CITAS
 // Función para agendar cita
 // Generar el calendario dinámico
 function generarCalendario(mes, anio) {
@@ -328,12 +330,10 @@ const fechaActual = new Date();
 inicializarSelectores();
 generarCalendario(fechaActual.getMonth(), fechaActual.getFullYear());
 generarHoras();
+//FIN CITAS
 
 
-//fin
-
-//barra busqueda
-// Barra de búsqueda
+// INICIO BARRA DE BUSQUEDA
 // Variables necesarias
 const searchInput = document.getElementById('search-box'); // Barra de búsqueda
 const searchResults = document.createElement('ul'); // Lista de resultados sugeridos
@@ -436,5 +436,4 @@ searchInput.addEventListener('keydown', function (event) {
         }
     }
 });
-
-//fin
+// FIN BARRA DE BUSQUEDA
