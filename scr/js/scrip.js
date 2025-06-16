@@ -437,3 +437,71 @@ searchInput.addEventListener('keydown', function (event) {
     }
 });
 // FIN BARRA DE BUSQUEDA
+
+
+const formUsuario = document.getElementById('formUsuario');
+const tablaUsuarios = document.getElementById('tablaUsuarios');
+const userId = document.getElementById('userId');
+
+formUsuario.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const usuario = {
+        Name: document.getElementById('name').value,
+        Email: document.getElementById('email').value,
+        Password: document.getElementById('password').value,
+        Phone: document.getElementById('phone').value
+    };
+
+    const url = userId.value
+        ? `http://localhost:3000/api/users/${userId.value}`
+        : 'http://localhost:3000/api/users';
+    const method = userId.value ? 'PUT' : 'POST';
+
+    await fetch(url, {
+        method: method,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(usuario)
+    });
+
+    formUsuario.reset();
+    userId.value = '';
+    cargarUsuarios();
+});
+
+async function cargarUsuarios() {
+    const res = await fetch('http://localhost:3000/api/users');
+    const data = await res.json();
+
+    tablaUsuarios.innerHTML = '';
+    data.forEach(user => {
+        tablaUsuarios.innerHTML += `
+            <tr class="border-t text-center">
+                <td class="p-2">${user.UserID}</td>
+                <td class="p-2">${user.Name}</td>
+                <td class="p-2">${user.Email}</td>
+                <td class="p-2">${user.Phone}</td>
+                <td class="p-2">
+                    <button class="bg-yellow-500 text-white px-2 py-1 rounded" onclick='editarUsuario(${JSON.stringify(user)})'>Editar</button>
+                    <button class="bg-red-600 text-white px-2 py-1 rounded" onclick='eliminarUsuario(${user.UserID})'>Eliminar</button>
+                </td>
+            </tr>
+        `;
+    });
+}
+
+function editarUsuario(user) {
+    document.getElementById('name').value = user.Name;
+    document.getElementById('email').value = user.Email;
+    document.getElementById('password').value = user.Password;
+    document.getElementById('phone').value = user.Phone;
+    userId.value = user.UserID;
+}
+
+async function eliminarUsuario(id) {
+    if (confirm('¿Deseas eliminar este usuario?')) {
+        await fetch(`http://localhost:3000/api/users/${id}`, { method: 'DELETE' });
+        cargarUsuarios();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', cargarUsuarios);

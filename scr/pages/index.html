@@ -50,10 +50,10 @@
                         <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
                             <h3 class="text-2xl font-medium text-gray-900 dark:text-white">Ingresa a la plataforma</h3>
                             <div>
-                                <label for="email"
+                                <label for="email1"
                                     class="text-lg font-medium text-gray-900 block mb-2 dark:text-gray-300">Correo
                                     electronico</label>
-                                <input type="email" name="email" id="email"
+                                <input type="email1" name="email1" id="email1"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                     placeholder="nombre@kingdombarber.com" required="">
                             </div>
@@ -360,6 +360,33 @@
         </div>
     </section>
     <!-- Fin seccion de citas -->
+
+    <section id="usuarios" class="p-6">
+    <div class="max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-4">Gestión de Usuarios</h2>
+        <form id="formUsuario" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <input type="hidden" id="userId">
+            <input type="text" id="name" placeholder="Nombre" class="p-2 border rounded" required>
+            <input type="email" id="email" placeholder="Correo" class="p-2 border rounded" required>
+            <input type="text" id="password" placeholder="Contraseña" class="p-2 border rounded" required>
+            <input type="text" id="phone" placeholder="Teléfono" class="p-2 border rounded" required>
+            <button type="submit" class="bg-blue-600 text-white p-2 rounded col-span-full">Guardar Usuario</button>
+        </form>
+        <table class="w-full table-auto border-collapse">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="p-2">ID</th>
+                    <th class="p-2">Nombre</th>
+                    <th class="p-2">Correo</th>
+                    <th class="p-2">Teléfono</th>
+                    <th class="p-2">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaUsuarios"></tbody>
+        </table>
+    </div>
+</section>
+
 
 
     <!-- Inicio contactos -->
